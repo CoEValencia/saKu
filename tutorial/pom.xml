@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>es.capgemini</groupId>
+        <artifactId>devon-pom-module-common</artifactId>
+       <version>5.0.1</version>
+    </parent>
+
+	<groupId>es.capgemini</groupId>
+	<artifactId>tutorial</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+	<dependencies>
+
+        <!-- Devon -->
+        <dependency><groupId>es.capgemini</groupId><artifactId>devon-core</artifactId><version>${devon.version}</version></dependency>
+        <dependency><groupId>es.capgemini</groupId><artifactId>devon-web</artifactId><version>${devon.version}</version></dependency>
+        <dependency><groupId>es.capgemini</groupId><artifactId>devon-hibernate</artifactId><version>${devon.version}</version></dependency>
+
+		<!-- Devon Web Resources -->
+		<dependency><groupId>es.capgemini</groupId><artifactId>devon-web-touch2</artifactId><version>${devon.version}</version></dependency>
+
+        <!-- Touch 2 -->
+        <dependency><groupId>org.webjars</groupId><artifactId>senchatouch</artifactId><version>2.4.2</version></dependency>
+
+
+	</dependencies>
+
+</project>

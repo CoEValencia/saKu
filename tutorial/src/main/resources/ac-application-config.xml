@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:sec="http://www.springframework.org/schema/security"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:int="http://www.springframework.org/schema/integration"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+               http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+               http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+               http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+               http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd
+               http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+               http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-2.0.xsd"
+    default-autowire="byName">
+    
+    <!-- 
+        Modulos de Devon 
+    -->
+    <import resource="classpath:devon/resources/core/ac-devon-core.xml" />
+    <import resource="classpath:devon/resources/core/ac-devon-data-access.xml" />
+    <import resource="classpath:devon/resources/web/ac-devon-webmvc.xml" />
+    <import resource="classpath:devon/resources/hibernate/ac-devon-hibernate.xml" />
+
+    <!-- 
+        Security 
+    -->
+    <import resource="classpath:devon/resources/web/ac-devon-web-security.xml" />
+    <import resource="classpath:ac-web-security.xml" />
+
+    <!-- JSF
+    <import resource="classpath:devon/resources/jsf/ac-devon-jsf.xml" />
+    -->
+
+    <!-- No se puede utilizar todavía la propiedad ${base-package}, component-scan escanea también el bean encargado de las propiedades -->
+    <context:component-scan base-package="es.capgemini.tutorial" />
+
+    <!-- Webservices 
+    <import resource="classpath:devon/resources/ws/ac-devon-ws.xml" />
+    <import resource="classpath:ac-webservices.xml" />
+    -->
+
+    <!-- Hibernate session monitoring aliasses 
+    <alias name="masterSessionFactory" alias="monitoredSessionFactory1"/>
+    -->
+
+    <!-- 
+        Never cache main.wbo
+    -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/main/main.wbo"/>
+            <bean parent="fwk.cacheControl" p:seconds="0"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+</beans>

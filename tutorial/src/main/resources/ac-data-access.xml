@@ -1,0 +1,45 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jee="http://www.springframework.org/schema/jee"
+  xmlns:p="http://www.springframework.org/schema/p"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+                           http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.1.xsd"
+    default-autowire="byName">
+
+    <!-- Datasource
+        Default:
+            <jee:jndi-lookup id="master.internalDataSource" jndi-name="java:comp/env/${master.dsname}" />
+        JBoss:
+            <jee:jndi-lookup id="master.internalDataSource" jndi-name="java:/${master.dsname}" resource-ref="false" />
+        Weblogic:
+            <jee:jndi-lookup id="master.internalDataSource" jndi-name="${master.dsname}" resource-ref="false" />
+        Internal:
+            <bean id="master.internalDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"
+                p:driverClassName="${master.jdbc.driverClassName}" p:url="${master.jdbc.url}" p:username="${master.jdbc.username}"
+                p:password="${master.jdbc.password}" />
+    -->
+
+    <!-- Hibernate annotated classes. 
+         Solo necesario si se listan las entidades de a una, ya que por defecto se escanea ${daoPackages} en el bean "fwk.master.annotatedPackageClasses"
+    <bean id="master.annotatedClasses" parent="fwk.master.annotatedClasses">
+        <property name="sourceList">
+            <list merge="true">
+                <value>${base-package}.ClassName</value>
+            </list>
+        </property>
+    </bean>
+    -->
+    
+    <!-- Hibernate Cache Strategies -->
+    <bean id="master.entityCacheStrategies" parent="fwk.master.entityCacheStrategies">
+        <property name="properties">
+            <props merge="true">
+                <!-- Application mappings 
+                <prop key="es.capgemini.devon.security.user.model.User">read-write</prop>
+                <prop key="es.capgemini.devon.security.user.model.Authority">read-write</prop>
+                -->                
+            </props>
+        </property>
+    </bean>
+
+</beans>

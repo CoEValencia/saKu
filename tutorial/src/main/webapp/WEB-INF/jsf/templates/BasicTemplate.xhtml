@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+   <title><ui:insert name="title">BasicTemplate Title</ui:insert></title>
+  
+   <link rel="shortcut icon" href="../img/favicon.ico" />
+   <style>
+    body {
+    background: white url("../img/loginBackground.jpg");
+    margin : 0px;
+    padding : 0px;
+    font-family : arial;
+    }
+    h1 {
+        background : #7992b4;
+        border-bottom : 1px solid #ccc;
+        padding : 0px;
+        color : #666;
+    }    
+    
+    table#login {
+       	background : #7992b4;
+        border : 1px solid #ccc;
+        padding : 0px;
+        color : #666;
+     }
+    table#login label {
+    	color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="header">
+    <ui:insert name="header">
+        <ui:include src="/WEB-INF/jsf/templates/header.xhtml"/>
+    </ui:insert>
+</div>
+
+<div id="content">
+    <ui:insert name="content">
+    </ui:insert>
+</div>
+
+<div id="footer">
+    <ui:insert name="footer">
+        <ui:include src="/WEB-INF/jsf/templates/footer.xhtml"/>
+    </ui:insert>
+</div>
+
+</body>
+</html>

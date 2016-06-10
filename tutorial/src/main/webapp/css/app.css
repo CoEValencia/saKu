@@ -1,0 +1,20 @@
+.app_login{
+	background-color: red;
+	color: red;
+}
+
+.x-panel-header{
+     background-color: red !important;
+      background-image: none !important;
+}
+
+.x-toolbar-dark {
+   background-color: red !important;
+   background-image: none !important;
+}
+
+.x-panel-body{
+    background-color : red !important;
+     background-image: none !important;
+}
+
