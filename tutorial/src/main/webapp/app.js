@@ -24,14 +24,16 @@ Fwk.application({
     controllers: [
         'Main',
         'Sub',
-        'login.LoginC'
+        'login.LoginC',
+        'registry.RegistryC'
         ],
     views: [
         'MainMenu',
         'Main',
         'Sub',
         'login.LoginV',
-        'chat.ChatMainV'
+        'chat.ChatMainV',
+        'registry.RegistryV'
     ],
 
     launch: function() {

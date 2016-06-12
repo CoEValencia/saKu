@@ -17,10 +17,10 @@ Ext.define("App.controller.login.LoginC", {
         }
     },
 
-    doNewUser: function(btn){             
-//      btn.up('login').reset();
-//      Ext.Viewport.add(Ext.create('Login.view.PasswordForgetV'));
-//      Ext.Viewport.setActiveItem('passwordforget');
+    doNewUser: function(btn){    
+        Ext.Viewport.setActiveItem({
+            xtype:'registry'
+        });
     },
 
 
@@ -60,7 +60,6 @@ Ext.define("App.controller.login.LoginC", {
     },
 
 loginHandler: function(var1,var2,var3){
-    debugger;
 }
 
 });

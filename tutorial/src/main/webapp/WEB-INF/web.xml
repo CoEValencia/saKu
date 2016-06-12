@@ -1,243 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee"
-    xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
 
-    <display-name>tutorial</display-name>
+	<display-name>tutorial</display-name>
 
-    <!--
-        - Session timeout in minutes
-    <session-config>
-        <session-timeout>1</session-timeout>
-    </session-config>
-    -->
-    
-    <!--
-        - Key of the system property that should specify the root directory of this
-        - web app. Applied by WebAppRootListener or Log4jConfigListener.
-    -->
-    <context-param>
-        <param-name>webAppRootKey</param-name>
-        <param-value>web.root.tutorial</param-value>
-    </context-param>
+	<!-- - Session timeout in minutes <session-config> <session-timeout>1</session-timeout> 
+		</session-config> -->
 
-    <!--
-        - Location of the Log4J config file, for initialization and refresh checks.
-        - Applied by Log4jConfigListener.
-    -->
-    <context-param>
-        <param-name>log4jConfigLocation</param-name>
-        <param-value>/WEB-INF/classes/log4j.xml</param-value>
-    </context-param>
+	<!-- - Key of the system property that should specify the root directory 
+		of this - web app. Applied by WebAppRootListener or Log4jConfigListener. -->
+	<context-param>
+		<param-name>webAppRootKey</param-name>
+		<param-value>web.root.tutorial</param-value>
+	</context-param>
 
-    <!--
-        - Location of the XML file that defines the root application context
-        - Applied by ContextLoaderListener.
-    -->
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/classes/ac-application-config.xml</param-value>
-    </context-param>
+	<!-- - Location of the Log4J config file, for initialization and refresh 
+		checks. - Applied by Log4jConfigListener. -->
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>/WEB-INF/classes/log4j.xml</param-value>
+	</context-param>
 
-    <!--
-        - No escape in json	responses
-    -->
-    <context-param>
-        <param-name>atg.taglib.json.escapeXml</param-name>
-        <param-value>false</param-value>
-    </context-param>
+	<!-- - Location of the XML file that defines the root application context 
+		- Applied by ContextLoaderListener. -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/classes/ac-application-config.xml</param-value>
+	</context-param>
 
-    <!--  Java Server Faces - Configuracion
-    <context-param>
-        <param-name>javax.faces.CONFIG_FILES</param-name>
-        <param-value>/WEB-INF/classes/faces-config.xml</param-value>
-    </context-param>
-    -->
+	<!-- - No escape in json responses -->
+	<context-param>
+		<param-name>atg.taglib.json.escapeXml</param-name>
+		<param-value>false</param-value>
+	</context-param>
 
-    <!--
-        - Enables URL Rewriting
-    <filter>
-        <filter-name>UrlRewriteFilter</filter-name>
-        <filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
-        <init-param>
-            <param-name>logLevel</param-name>
-            <param-value>ERROR</param-value>
-        </init-param>
-        <init-param>
-            <param-name>confPath</param-name>
-            <param-value>/WEB-INF/classes/template.htaccess</param-value>
-        </init-param>
-    </filter>
-    <filter-mapping>
-       <filter-name>UrlRewriteFilter</filter-name>
-       <url-pattern>/*</url-pattern>
-    </filter-mapping>
-    -->
+	<!-- Java Server Faces - Configuracion <context-param> <param-name>javax.faces.CONFIG_FILES</param-name> 
+		<param-value>/WEB-INF/classes/faces-config.xml</param-value> </context-param> -->
 
-    <!--
-        - Enables Spring Security
-    -->
-     <filter>
-        <filter-name>springSecurityFilterChain</filter-name>
-        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-    </filter>
+	<!-- - Enables URL Rewriting <filter> <filter-name>UrlRewriteFilter</filter-name> 
+		<filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class> 
+		<init-param> <param-name>logLevel</param-name> <param-value>ERROR</param-value> 
+		</init-param> <init-param> <param-name>confPath</param-name> <param-value>/WEB-INF/classes/template.htaccess</param-value> 
+		</init-param> </filter> <filter-mapping> <filter-name>UrlRewriteFilter</filter-name> 
+		<url-pattern>/*</url-pattern> </filter-mapping> -->
 
-    <filter-mapping>
-        <filter-name>springSecurityFilterChain</filter-name>
-        <url-pattern>/*</url-pattern>
-        <!--  Para integrar Java Server Faces, Spring MVC y Spring Security
-        <dispatcher>FORWARD</dispatcher>
-        <dispatcher>REQUEST</dispatcher>
-        -->
-    </filter-mapping>
-
-    <!-- JPA Open Session In View -->
-    <filter>
-	    <filter-name>OpenEntityManagerInViewFilter</filter-name>
-	    <filter-class>org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter</filter-class>
+	<!-- - Enables Spring Security -->
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
 	</filter>
 
 	<filter-mapping>
-	    <filter-name>OpenEntityManagerInViewFilter</filter-name>
-	    <url-pattern>/*</url-pattern>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+		<!-- Para integrar Java Server Faces, Spring MVC y Spring Security <dispatcher>FORWARD</dispatcher> 
+			<dispatcher>REQUEST</dispatcher> -->
 	</filter-mapping>
 
-   <!--  Java Server Faces con URL "bonito" (legibles y compatible con REST
-   <filter>
-	 <filter-name>Pretty Filter</filter-name>
-	 <filter-class>com.ocpsoft.pretty.PrettyFilter</filter-class>
-   </filter>
-   <filter-mapping>
-	 <filter-name>Pretty Filter</filter-name>
-	 <url-pattern>/default/*</url-pattern>
-	 <dispatcher>FORWARD</dispatcher>
-	 <dispatcher>REQUEST</dispatcher>
-	 <dispatcher>ERROR</dispatcher>
-    </filter-mapping>
-    -->
+	<!-- JPA Open Session In View -->
+	<filter>
+		<filter-name>OpenEntityManagerInViewFilter</filter-name>
+		<filter-class>org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter</filter-class>
+	</filter>
 
-    <!--
-        - UserCounterListener class used to count the current number
-        - of active users for the applications.  Does this by counting
-        - how many user objects are stuffed into the session.  It also grabs
-        - these users and exposes them in the servlet context.
-    -->
-    <listener>
-        <listener-class>es.capgemini.devon.console.web.UserCounterListener</listener-class>
-    </listener>
+	<filter-mapping>
+		<filter-name>OpenEntityManagerInViewFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 
-    <!--
-        - Configures Log4J for this web app.
-        - As this context specifies a context-param "log4jConfigLocation", its file path
-        - is used to load the Log4J configuration, including periodic refresh checks.
-        -
-        - Would fall back to default Log4J initialization (non-refreshing) if no special
-        - context-params are given.
-        -
-        - Exports a "web app root key", i.e. a system property that specifies the root
-        - directory of this web app, for usage in log file paths.
-        - This web app specifies "petclinic.root" (see log4j.properties file).
-    -->
-    <listener>
-        <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
-    </listener>
+	<!-- Java Server Faces con URL "bonito" (legibles y compatible con REST 
+		<filter> <filter-name>Pretty Filter</filter-name> <filter-class>com.ocpsoft.pretty.PrettyFilter</filter-class> 
+		</filter> <filter-mapping> <filter-name>Pretty Filter</filter-name> <url-pattern>/default/*</url-pattern> 
+		<dispatcher>FORWARD</dispatcher> <dispatcher>REQUEST</dispatcher> <dispatcher>ERROR</dispatcher> 
+		</filter-mapping> -->
 
-    <!--
-      - Loads the root application context of this web app at startup,
-      - by default from "/WEB-INF/applicationContext.xml".
-        - Note that you need to fall back to Spring's ContextLoaderServlet for
-        - J2EE servers that do not follow the Servlet 2.4 initialization order.
-        -
-      - Use WebApplicationContextUtils.getWebApplicationContext(servletContext)
-      - to access it anywhere in the web application, outside of the framework.
-      -
-      - The root context is the parent of all servlet-specific contexts.
-      - This means that its beans are automatically available in these child contexts,
-      - both for getBean(name) calls and (external) bean references.
-      -->
-    <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
+	<!-- - UserCounterListener class used to count the current number - of active 
+		users for the applications. Does this by counting - how many user objects 
+		are stuffed into the session. It also grabs - these users and exposes them 
+		in the servlet context. -->
+	<listener>
+		<listener-class>es.capgemini.devon.console.web.UserCounterListener</listener-class>
+	</listener>
 
-    <!--
-      - Spring web MVC servlet that dispatches requests to registered handlers.
-      - Has its own application context, by default defined in "ac-dispatcher-servlet-config"
-      -
-      - A web app can contain any number of such servlets.
-      - Note that this web app has a shared root application context, serving as parent
-      - of all DispatcherServlet contexts.
-      -->
-    <servlet>
-        <servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
-        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	<!-- - Configures Log4J for this web app. - As this context specifies a 
+		context-param "log4jConfigLocation", its file path - is used to load the 
+		Log4J configuration, including periodic refresh checks. - - Would fall back 
+		to default Log4J initialization (non-refreshing) if no special - context-params 
+		are given. - - Exports a "web app root key", i.e. a system property that 
+		specifies the root - directory of this web app, for usage in log file paths. 
+		- This web app specifies "petclinic.root" (see log4j.properties file). -->
+	<listener>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	</listener>
+
+	<!-- - Loads the root application context of this web app at startup, - 
+		by default from "/WEB-INF/applicationContext.xml". - Note that you need to 
+		fall back to Spring's ContextLoaderServlet for - J2EE servers that do not 
+		follow the Servlet 2.4 initialization order. - - Use WebApplicationContextUtils.getWebApplicationContext(servletContext) 
+		- to access it anywhere in the web application, outside of the framework. 
+		- - The root context is the parent of all servlet-specific contexts. - This 
+		means that its beans are automatically available in these child contexts, 
+		- both for getBean(name) calls and (external) bean references. -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- - Spring web MVC servlet that dispatches requests to registered handlers. 
+		- Has its own application context, by default defined in "ac-dispatcher-servlet-config" 
+		- - A web app can contain any number of such servlets. - Note that this web 
+		app has a shared root application context, serving as parent - of all DispatcherServlet 
+		contexts. -->
+	<servlet>
+		<servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>classpath*:devon/resources/web/WebContent/WEB-INF/fwk/config/ac-dispatcher-servlet-config.xml</param-value>
 		</init-param>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
 
-    <!--
-      - CXF Webservices handler servlet
-    <servlet>
-        <servlet-name>CXFServlet</servlet-name>
-        <servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-      -->
+	<!-- - CXF Webservices handler servlet <servlet> <servlet-name>CXFServlet</servlet-name> 
+		<servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class> 
+		<load-on-startup>1</load-on-startup> </servlet> -->
 
-    <!--
-      - Dispatcher servlet mapping for the main web user interface.
-    -->
-    <servlet-mapping>
-        <servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
-        <url-pattern>*.wbo</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
-        <url-pattern>/rs/*</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
-        <url-pattern>/bo/*</url-pattern>
-    </servlet-mapping>
+	<!-- - Dispatcher servlet mapping for the main web user interface. -->
+	<servlet-mapping>
+		<servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
+		<url-pattern>*.wbo</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
+		<url-pattern>/rs/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
+		<url-pattern>/bo/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
+		<url-pattern>*.htm</url-pattern>
+	</servlet-mapping>
 
-    <!-- Map all /services requests to the Webservices Servlet for handling
-    <servlet-mapping>
-        <servlet-name>CXFServlet</servlet-name>
-        <url-pattern>/services/*</url-pattern>
-    </servlet-mapping>
-    -->
 
-  <!--  Java Server Faces - definicion de Servlet y parametros
-  <servlet>
-    <servlet-name>Faces Servlet</servlet-name>
-    <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Faces Servlet</servlet-name>
-    <url-pattern>*.xhtml</url-pattern>
-  </servlet-mapping>
-  <context-param>
-    <param-name>javax.faces.DEFAULT_SUFFIX</param-name>
-    <param-value>.xhtml</param-value>
-  </context-param>
-  <context-param>
-    <param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
-    <param-value>true</param-value>
-  </context-param>
+	<!-- Map all /services requests to the Webservices Servlet for handling 
+		<servlet-mapping> <servlet-name>CXFServlet</servlet-name> <url-pattern>/services/*</url-pattern> 
+		</servlet-mapping> -->
 
-  <context-param>
-	<param-name>com.ocpsoft.pretty.CONFIG_FILES</param-name>
-	<param-value>/WEB-INF/classes/pretty-config.xml</param-value>
-  </context-param>
-  -->
+	<!-- Java Server Faces - definicion de Servlet y parametros <servlet> <servlet-name>Faces 
+		Servlet</servlet-name> <servlet-class>javax.faces.webapp.FacesServlet</servlet-class> 
+		<load-on-startup>1</load-on-startup> </servlet> <servlet-mapping> <servlet-name>Faces 
+		Servlet</servlet-name> <url-pattern>*.xhtml</url-pattern> </servlet-mapping> 
+		<context-param> <param-name>javax.faces.DEFAULT_SUFFIX</param-name> <param-value>.xhtml</param-value> 
+		</context-param> <context-param> <param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name> 
+		<param-value>true</param-value> </context-param> <context-param> <param-name>com.ocpsoft.pretty.CONFIG_FILES</param-name> 
+		<param-value>/WEB-INF/classes/pretty-config.xml</param-value> </context-param> -->
 
-    <!--
-        -
-    -->
-    <welcome-file-list>
-        <welcome-file>/index.html</welcome-file>
-    </welcome-file-list>
+	<!-- - -->
+	<welcome-file-list>
+		<welcome-file>/index.html</welcome-file>
+	</welcome-file-list>
 </web-app>

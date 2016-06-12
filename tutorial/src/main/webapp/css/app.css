@@ -1,20 +1,50 @@
 .app_login{
-	background-color: red;
-	color: red;
+	background-color: white;
+	color: white;
 }
 
 .x-panel-header{
-     background-color: red !important;
+     background-color: white !important;
       background-image: none !important;
 }
 
 .x-toolbar-dark {
-   background-color: red !important;
+   background-color: white !important;
    background-image: none !important;
 }
 
 .x-panel-body{
-    background-color : red !important;
+    background-color : white !important;
      background-image: none !important;
 }
 
+
+.chirr-field {
+	border: 1px solid;
+	border-style: solid;
+	border-color: red;
+}
+
+.chirr-field-black {
+	border: 1px solid;
+	border-style: solid;
+	border-color: black;
+}
+
+.chirr-button {
+	background-color: #FA5858;
+	border-color: red;
+	color:white;
+	border-radius: 0px;
+}
+
+.image-circle{
+	width: 100px;
+	height: 100px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	border: 1px solid;
+	border-style: solid;
+	border-color: black;
+}
