@@ -33,8 +33,7 @@ Ext
                             name : 'field',
                             flex : 0.1,
                             cls : 'chirr-field-black',
-                            name : 'j_username',
-                            itemId : 'userNameTextField',
+                            itemId : 'nameFieldreg',
                             margin : '20 40 20 40 ',
                             placeHolder : 'Nombre de usuario'
                         },{
@@ -42,26 +41,23 @@ Ext
                             name : 'field',
                             flex : 0.1,
                             cls : 'chirr-field-black',
-                            name : 'j_username',
-                            itemId : 'userNameTextField',
+                            itemId : 'emailTextField',
                             margin : '20 40 20 40 ',
                             placeHolder : 'E-mail'
                         }, {
                             xtype : 'textfield',
-                            name : 'j_password',
                             cls : 'chirr-field-black',
                             margin : '20 40 20 40 ',
                             flex : 0.1,
-                            itemId : 'login_pass',
+                            itemId : 'passwordTextField',
                             inputType : 'password',
                             placeHolder : 'Contraseña'
                         }, {
                             xtype : 'textfield',
-                            name : 'j_password',
                             cls : 'chirr-field-black',
                             margin : '20 40 20 40 ',
                             flex : 0.1,
-                            itemId : 'login_pass',
+                            itemId : 'passwordReTextField',
                             inputType : 'password',
                             placeHolder : 'Repita la contraseña'
                         }, {

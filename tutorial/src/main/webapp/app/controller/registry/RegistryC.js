@@ -18,14 +18,26 @@ Ext.define("App.controller.registry.RegistryC", {
     },
 
     doNewUser: function(btn){    
-//        location.reload();
         
-        Ext.Ajax.request({
-            url: 'bo/USUARIO_FIND.htm',
-            success: function(response){
-                debugger
-            }
+        var name = Ext.ComponentQuery.query("#nameFieldreg")[0].getValue();
+        var email = Ext.ComponentQuery.query("#emailTextField")[0].getValue();
+        var password = Ext.ComponentQuery.query("#passwordTextField")[0].getValue();
+        var rePassword = Ext.ComponentQuery.query("#passwordReTextField")[0].getValue();
+        
+        if(password === rePassword && password != ""){
+        
+            Ext.Ajax.request({
+                url: 'public/ADD_NEW_USER.wbo',
+                params:{
+                  userName:name,
+                  password:password,
+                  email:email
+                },
+                success: function(response){
+                    Fwk.Msg.error(response.responseText, function(){location.reload();});
+                }
         });
+        }
     },
 
 

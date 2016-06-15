@@ -14,7 +14,7 @@ Fwk.application({
     title: '**Chirr',
     
 //    fwkBOPathSuffix:'.wbo',
-
+    requires: ['App.BusinessOperations'],
     models: [
          'chat.ChatM'
              ],

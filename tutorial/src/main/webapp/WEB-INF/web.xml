@@ -139,10 +139,6 @@
 		<servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
 		<url-pattern>/bo/*</url-pattern>
 	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
-		<url-pattern>*.htm</url-pattern>
-	</servlet-mapping>
 
 
 	<!-- Map all /services requests to the Webservices Servlet for handling 
