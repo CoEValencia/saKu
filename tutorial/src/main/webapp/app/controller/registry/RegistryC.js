@@ -24,8 +24,10 @@ Ext.define("App.controller.registry.RegistryC", {
         var password = Ext.ComponentQuery.query("#passwordTextField")[0].getValue();
         var rePassword = Ext.ComponentQuery.query("#passwordReTextField")[0].getValue();
         
+        
         if(password === rePassword && password != ""){
         
+            Ext.Viewport.mask();
             Ext.Ajax.request({
                 url: 'public/ADD_NEW_USER.wbo',
                 params:{
@@ -35,6 +37,10 @@ Ext.define("App.controller.registry.RegistryC", {
                 },
                 success: function(response){
                     Fwk.Msg.error(response.responseText, function(){location.reload();});
+                    Ext.Viewport.unmask();
+                }, 
+                failure: function () {
+                    Ext.Viewport.unmask();
                 }
         });
         }

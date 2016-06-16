@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import es.capgemini.tutorial.common.BusinessOperations;
+import es.capgemini.tutorial.common.EmailSender;
 import es.capgemini.tutorial.common.Utils;
 import es.capgemini.tutorial.usuario.model.Usuario;
 import es.capgemini.tutorial.usuario.service.UsuarioServiceDto;
@@ -39,6 +40,10 @@ public class MainController {
             dto.setPassword(Utils.encryptPassword(pass + "{" + aux.getId() + "}"));
             dto.setId(aux.getId());
             businessProxy.usuario.update(dto);
+
+            EmailSender sender = new EmailSender(email);
+            sender.send("Bienvenido a Chirr", "Correo enviado correctamente");
+
             return "Registro realizado, revise su email.";
         }
         return "Usuario o email ya elegidos";
