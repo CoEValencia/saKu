@@ -23,7 +23,7 @@ Ext.define("App.controller.registry.RegistryC", {
         var email = Ext.ComponentQuery.query("#emailTextField")[0].getValue();
         var password = Ext.ComponentQuery.query("#passwordTextField")[0].getValue();
         var rePassword = Ext.ComponentQuery.query("#passwordReTextField")[0].getValue();
-        
+        //comit
         
         if(password === rePassword && password != ""){
         
