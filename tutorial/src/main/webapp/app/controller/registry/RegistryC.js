@@ -29,7 +29,7 @@ Ext.define("App.controller.registry.RegistryC", {
         
             Ext.Viewport.mask();
             Ext.Ajax.request({
-                url: 'public/ADD_NEW_USER.wbo',
+                url: 'public/ADD_NEW_USER.wbo', 
                 params:{
                   userName:name,
                   password:password,
