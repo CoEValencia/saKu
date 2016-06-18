@@ -9,6 +9,7 @@ Ext.define('App.view.chat.ChatMainV', {
 
 
     initialize: function() {
+<<<<<<< HEAD
         var me = this;
 
         App.bo.permisosCheck({
@@ -69,6 +70,54 @@ Ext.define('App.view.chat.ChatMainV', {
         // this.config.title = 'Listado de chats';
         // debugger;
         
+=======
+        // this.config.title = 'Listado de chats';
+        // debugger;
+        this.setItems([
+                       {
+                           xtype : 'label',
+                           html : '<span style="font-style: italic;color:red;font-size:80px;align:center;text-align: center;z-index:100;">Chirr!<span>',
+                           width : 200,
+                           margin : '50 auto',
+                       },
+
+                       {
+                           xtype: 'searchfield',
+                           //placeHolder: 'Search...',
+                           itemId: 'searchBox',
+                           cls:'chirr-field',
+                           //maxWidth : 200,
+                           margin : '20 40 20 40 ',
+                           //flex : 0.5,
+                           store: {
+                               xclass : 'App.store.chat.ChatS'
+                           },
+                           displayField: 'nombre',
+                           valueField: 'id'
+                       },{
+                           xtype:'fwklist',
+                           cls:'chirr-field',
+                           margin : '20 40 20 40 ',
+                           store: {
+                               xclass : 'App.store.chat.ChatS'
+                           },
+                           disableSlection: true,
+                           flex:1,
+                           itemTpl: new Ext.XTemplate(
+                                   '<tpl>',
+                                   '{nombre}',
+                                   '</tpl>'
+                           )
+
+                       },{
+                           xtype : 'button',
+                           text : 'Crear stream',
+                           cls : 'chirr-button',
+                           margin : '20 40 20 40 ',
+                           action : 'doEnter'
+                       }  
+                       ]);
+>>>>>>> 273047a78ae967834bcaf35a3a939adadb2860a4
 
         this.setFwkNavBarItems([
                                 {

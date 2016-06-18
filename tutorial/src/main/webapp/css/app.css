@@ -23,7 +23,11 @@
 	border: 1px solid !important;
 	border-style: solid;
 	border-color: red !important;
+<<<<<<< HEAD
 /* 	border-right:  1px solid !important; */
+=======
+	border-right:  1px solid !important;
+>>>>>>> 273047a78ae967834bcaf35a3a939adadb2860a4
 }
 
 .chirr-field-black {
