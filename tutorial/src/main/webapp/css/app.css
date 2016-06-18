@@ -4,12 +4,12 @@
 }
 
 .x-panel-header{
-     background-color: white !important;
+     background-color: #FA5858 !important;
       background-image: none !important;
 }
 
 .x-toolbar-dark {
-   background-color: white !important;
+   background-color: #FA5858 !important;
    background-image: none !important;
 }
 
@@ -20,9 +20,10 @@
 
 
 .chirr-field {
-	border: 1px solid;
+	border: 1px solid !important;
 	border-style: solid;
-	border-color: red;
+	border-color: red !important;
+/* 	border-right:  1px solid !important; */
 }
 
 .chirr-field-black {
@@ -47,4 +48,40 @@
 	border: 1px solid;
 	border-style: solid;
 	border-color: black;
+}
+
+.selectfield {
+display: block;
+
+.x-label-align-left {
+    &:first-child {
+      .x-form-label {
+        @if $include-border-radius { @include border-top-right-radius($form-fieldset-radius); }
+      }
+    }
+
+    &:last-child {
+      .x-form-label {
+        @if $include-border-radius { @include border-bottom-left-radius(0); }
+      }
+    }        
+}
+.x-form-label {
+    span {
+      font-size: 25px;
+    }
+}    
+.x-component-outer {
+    &:after {
+        margin-top: .5em;
+    }
+    &:before {
+        background: none;
+    }
+    .x-field-input{
+        font-size: 25px;
+    }
+}
+}  
+   
 }

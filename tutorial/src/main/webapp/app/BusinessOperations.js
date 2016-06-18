@@ -6,6 +6,9 @@ Ext.define('App.BusinessOperations', {
 }, function() {
 
     Fwk.BO.register({
-        'usuarioFind' : 'bo/USUARIO_FIND' + Fwk.config.fwkBOPathSuffix
+        'usuarioFind' : 'bo/USUARIO_FIND' + Fwk.config.fwkBOPathSuffix,
+        'permisosUserFind' : 'bo/PERMISOS_FIND_BY_ID' + Fwk.config.fwkBOPathSuffix,
+        'permisosCheck' : 'public/CHECK_PERMISOS_USER' + Fwk.config.fwkBOPathSuffix,
+        'validateUser' : 'public/VALIDATE_USER' +  Fwk.config.fwkBOPathSuffix
     });
 });

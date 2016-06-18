@@ -12,9 +12,17 @@ Ext
                     },
 
                     constructor : function(config) {
-                        config = config || {};
-                        config.items = this.fwkItems();
-                        this.callParent([ config ]);
+                            config = config || {};
+                            config.items = this.fwkItems();
+                            this.callParent([ config ]);
+                            this.onAfter("painted", function(){
+                                if(getParameterByName("user_confirm") == "true"){
+                                    Fwk.Page.removeLogin();
+                                    Ext.Viewport.setActiveItem({
+                                        xtype:'confirmuser'
+                                    });
+                                }
+                            });
                     },
 
                     fwkItems : function() {
