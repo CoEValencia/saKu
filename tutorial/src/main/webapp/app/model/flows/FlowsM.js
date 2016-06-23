@@ -1,0 +1,19 @@
+Ext.define('App.model.flows.FlowsM',{
+   extend:'Fwk.data.Model',
+   config: {
+       fields:[
+               {
+                   name:'id',
+                   type:'int'
+               },
+               {
+                   name:'name',
+                   type:'string'
+                 },
+                 {
+                     name:'stream',
+                     type:'int'
+                 },
+       ]
+   }
+});

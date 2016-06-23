@@ -22,7 +22,7 @@
 .chirr-field {
 	border: 1px solid !important;
 	border-style: solid;
-	border-color: red !important;
+	border-color: #FA5858 !important;
 /* 	border-right:  1px solid !important; */
 }
 
@@ -37,6 +37,18 @@
 	border-color: red;
 	color:white;
 	border-radius: 0px;
+}
+
+.chirr-button-gray {
+	background-color: white;
+	border-color: #FA5858;
+	color:red;
+	border-radius: 0px;
+}
+
+
+.panel_chirr{
+	background-color: #red;
 }
 
 .image-circle{

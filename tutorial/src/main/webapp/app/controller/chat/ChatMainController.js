@@ -10,6 +10,9 @@ Ext.define("App.controller.chat.ChatMainController", {
             },
             'chatMainV [action=searchList]': {
                 tap: 'searchList'
+            },
+            'chatMainV [action=tapList]':{
+                itemsingletap:'tapList'
             }
 //            'chatMainV': {
 //                painted: 'loadData'
@@ -48,6 +51,13 @@ Ext.define("App.controller.chat.ChatMainController", {
                 Ext.ComponentQuery.query("#chatList")[0].getStore().addData(response);
             }
         });
+    },
+    
+    tapList:function( me, index, target, record, e, eOpts){
+        Ext.Viewport.setActiveItem({
+            xtype:'flows',
+            id: record.data.id,
+            name: record.data.name
+        });
     }
-
 });

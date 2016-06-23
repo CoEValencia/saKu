@@ -27,7 +27,8 @@ Fwk.application({
         'login.LoginC',
         'registry.RegistryC',
         'confirmuser.ConfirmUserController', "App.controller.chat.ChatAddController",
-        'chat.ChatMainController'
+        'chat.ChatMainController',
+        "App.controller.flows.FlowsController"
     ],
     views: [
         'MainMenu',
@@ -36,7 +37,8 @@ Fwk.application({
         'login.LoginV',
         'chat.ChatMainV','App.view.chat.ChatAddV',
         'registry.RegistryV',
-        'confirmuser.ConfirmUser'
+        'confirmuser.ConfirmUser',
+        'flows.FlowsV'
     ],
 
     launch: function() {
