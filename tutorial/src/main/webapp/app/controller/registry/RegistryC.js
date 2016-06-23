@@ -13,10 +13,17 @@ Ext.define("App.controller.registry.RegistryC", {
             },
             'registry [action=newUser]': {
                 tap: 'doNewUser'
+            },
+            'registry [action=goBack]': {
+                tap: 'goBack'
             }
         }
     },
-
+    
+    goBack: function(){
+        Ext.Viewport.remove(Ext.Viewport.getActiveItem());
+    },
+    
     doNewUser: function(btn){    
         
         var name = Ext.ComponentQuery.query("#nameFieldreg")[0].getValue();
@@ -51,6 +58,7 @@ Ext.define("App.controller.registry.RegistryC", {
      * Se ejecuta cuando el usuario quiere envíar el formulario de login al servidor.
      */
     doLogin: function(btn) {
-    }
+    },
+    
 
 });

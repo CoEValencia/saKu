@@ -1,9 +1,9 @@
 Ext
         .define(
-                'App.view.registry.RegistryV',
+                'App.view.chat.ChatAddV',
                 {
                     extend : Ext.form.Panel,
-                    xtype : 'registry',
+                    xtype : 'chatadd',
 
                     config : {
                         baseCls : 'app_login',
@@ -36,49 +36,21 @@ Ext
                                 margin : '30 40 20 40 ',
                             }]
                         },{
-                            xtype: 'image',
-                            cls:'image-circle',
-                            margin : 'auto',
-                            src: 'img/camera-icon.png',
-                        },{
                             xtype : 'textfield',
                             name : 'field',
                             flex : 0.1,
+                            text:'Nombre',
                             cls : 'chirr-field-black',
-                            itemId : 'nameFieldreg',
+                            itemId : 'streamName',
                             margin : '20 40 20 40 ',
-                            placeHolder : 'Nombre de usuario'
-                        },{
-                            xtype : 'textfield',
-                            name : 'field',
-                            flex : 0.1,
-                            cls : 'chirr-field-black',
-                            itemId : 'emailTextField',
-                            margin : '20 40 20 40 ',
-                            placeHolder : 'E-mail'
-                        }, {
-                            xtype : 'textfield',
-                            cls : 'chirr-field-black',
-                            margin : '20 40 20 40 ',
-                            flex : 0.1,
-                            itemId : 'passwordTextField',
-                            inputType : 'password',
-                            placeHolder : 'Contraseña'
-                        }, {
-                            xtype : 'textfield',
-                            cls : 'chirr-field-black',
-                            margin : '20 40 20 40 ',
-                            flex : 0.1,
-                            itemId : 'passwordReTextField',
-                            inputType : 'password',
-                            placeHolder : 'Repita la contraseña'
+                            placeHolder : 'Nombre del stream'
                         }, {
                             xtype : 'button',
-                            text : 'Registrar',
+                            text : 'Crear Stream',
                             cls : 'chirr-button',
                             margin : '20 40 20 40 ',
-                            action : 'newUser'
-                        } ];
+                            action : 'createStream'
+                        }];
                     }
 
                 });

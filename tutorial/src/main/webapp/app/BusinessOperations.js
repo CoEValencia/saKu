@@ -10,6 +10,7 @@ Ext.define('App.BusinessOperations', {
         'permisosUserFind' : 'bo/PERMISOS_FIND_BY_ID' + Fwk.config.fwkBOPathSuffix,
         'permisosCheck' : 'public/CHECK_PERMISOS_USER' + Fwk.config.fwkBOPathSuffix,
         'validateUser' : 'public/VALIDATE_USER' +  Fwk.config.fwkBOPathSuffix,
-        'findChatsLike' : 'bo/STREAM_FIND_BY_NAME'  +  Fwk.config.fwkBOPathSuffix
+        'findChatsLike' : 'bo/STREAM_FIND_BY_NAME'  +  Fwk.config.fwkBOPathSuffix,
+        'addChats' : 'bo/STREAM_UPDATE'  +  Fwk.config.fwkBOPathSuffix
     });
 });

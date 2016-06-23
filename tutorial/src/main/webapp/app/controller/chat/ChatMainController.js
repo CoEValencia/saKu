@@ -18,7 +18,9 @@ Ext.define("App.controller.chat.ChatMainController", {
     },
 
     createStream: function(btn){    
-       
+        Ext.Viewport.setActiveItem({
+            xtype:'chatadd'
+        });
     },
     
     loadData : function(cmp){

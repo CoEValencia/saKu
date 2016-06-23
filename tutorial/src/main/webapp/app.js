@@ -26,7 +26,7 @@ Fwk.application({
         'Sub',
         'login.LoginC',
         'registry.RegistryC',
-        'confirmuser.ConfirmUserController',
+        'confirmuser.ConfirmUserController', "App.controller.chat.ChatAddController",
         'chat.ChatMainController'
     ],
     views: [
@@ -34,7 +34,7 @@ Fwk.application({
         'Main',
         'Sub',
         'login.LoginV',
-        'chat.ChatMainV',
+        'chat.ChatMainV','App.view.chat.ChatAddV',
         'registry.RegistryV',
         'confirmuser.ConfirmUser'
     ],
