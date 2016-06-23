@@ -25,7 +25,7 @@ public class UsuarioDaoHibernate extends AbstractHibernateDao<Usuario, Long> imp
         // TODO Auto-generated method stub
 
         Criteria criteria = getSession().createCriteria(Usuario.class);
-        criteria.add(Restrictions.eq("userName", name));
+        criteria.add(Restrictions.like("name", name));
 
         if (criteria.list().size() == 0) {
             return null;

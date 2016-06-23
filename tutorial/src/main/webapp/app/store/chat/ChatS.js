@@ -5,22 +5,22 @@ Ext.define('App.store.chat.ChatS',{
     config:{
         model:'App.model.chat.ChatM',
         remoteSort: false,
-        autoLoad: true,
-//        proxy:{
-//            type: 'fwkajax',
-//            api:{
-//                read:'chatFind'
-//            }
-//        }
-        data: [{
-                nombre:'PruebaChat0',
-                id: '0'
-            },{
-                nombre: 'PruebaChat1',
-                id: '1'
-            },{
-                nombre: 'PruebaChat2',
-                id: '2'
-            }],
+        autoLoad: false,
+        proxy:{
+            type: 'fwkajax',
+            api:{
+                read:'findChatsLike'
+            }
+        },
+//        data: [{
+//                name:'PruebaChat0',
+//                id: '0'
+//            },{
+//                name: 'PruebaChat1',
+//                id: '1'
+//            },{
+//                name: 'PruebaChat2',
+//                id: '2'
+//            }],
     }
 });

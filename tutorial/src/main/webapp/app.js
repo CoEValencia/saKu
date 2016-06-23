@@ -17,17 +17,18 @@ Fwk.application({
     requires: ['App.BusinessOperations'],
     models: [
          'chat.ChatM'
-             ],
+    ],
     stores: [
          'chat.ChatS'
-             ],
+    ],
     controllers: [
         'Main',
         'Sub',
         'login.LoginC',
         'registry.RegistryC',
-        'confirmuser.ConfirmUserController'
-        ],
+        'confirmuser.ConfirmUserController',
+        'chat.ChatMainController'
+    ],
     views: [
         'MainMenu',
         'Main',

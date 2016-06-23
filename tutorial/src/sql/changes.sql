@@ -1,0 +1,28 @@
+/* Tabla Stream */
+CREATE TABLE STREAM (
+   ID                    BIGINT(16)      NOT NULL PRIMARY KEY AUTO_INCREMENT,
+   NAME                  VARCHAR(50)     NOT NULL
+);
+
+/* Tabla Flow*/
+CREATE TABLE FLOW (
+  ID                     BIGINT(16)       NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  STREAM_ID              BIGINT(16)       NOT NULL,
+  NAME                   VARCHAR(50)      NOT NULL,
+  
+  CONSTRAINT FK_STREAM_ID FOREIGN KEY (STREAM_ID) REFERENCES STREAM (ID)
+);
+
+/* Tabla Mensajes*/
+CREATE TABLE MESSAGE (
+  ID                     BIGINT(16)       NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  USER_ID                BIGINT(16)       NOT NULL,
+  FLOW_ID                BIGINT(16)       NOT NULL,
+  MESSAGE                VARCHAR(250)     NOT NULL,
+  
+  CONSTRAINT FK_FLOW_ID FOREIGN KEY (FLOW_ID) REFERENCES FLOW (ID),
+  CONSTRAINT FK_USER_ID FOREIGN KEY (USER_ID) REFERENCES USERS (ID)
+);
+
+/* DEFAULT STREAM*/
+INSERT INTO STREAM (Name) VALUES ('Default Stream');

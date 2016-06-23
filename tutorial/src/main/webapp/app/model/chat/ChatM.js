@@ -7,7 +7,7 @@ Ext.define('App.model.chat.ChatM',{
                    type:'int'
                },
                {
-                   name:'nombre',
+                   name:'name',
                    type:'string'
                  }//,
 //               {
