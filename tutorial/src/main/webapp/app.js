@@ -16,10 +16,10 @@ Fwk.application({
 //    fwkBOPathSuffix:'.wbo',
     requires: ['App.BusinessOperations'],
     models: [
-         'chat.ChatM'
+         'chat.ChatM', 'conversation.ConversationM', 'flows.FlowsM'
     ],
     stores: [
-         'chat.ChatS'
+         'chat.ChatS', 'flows.FlowsS'
     ],
     controllers: [
         'Main',
@@ -28,7 +28,8 @@ Fwk.application({
         'registry.RegistryC',
         'confirmuser.ConfirmUserController', "App.controller.chat.ChatAddController",
         'chat.ChatMainController',
-        "App.controller.flows.FlowsController"
+        'flows.FlowsController',
+        'conversation.ConversationController'
     ],
     views: [
         'MainMenu',
@@ -38,7 +39,8 @@ Fwk.application({
         'chat.ChatMainV','App.view.chat.ChatAddV',
         'registry.RegistryV',
         'confirmuser.ConfirmUser',
-        'flows.FlowsV'
+        'flows.FlowsV',
+        'App.view.conversation.ConversationV'
     ],
 
     launch: function() {

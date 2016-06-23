@@ -13,12 +13,13 @@ Ext.define("App.controller.flows.FlowsController", {
             },
             'flows [action=addNewFlow]': {
                 tap: 'addNewFlow'
+            },
+            'flows [action=tapList]':{
+                itemsingletap:'tapList'
             }
         }
     },
 
-   
-    
     loadData : function(cmp){
       App.bo.findFlowsById({
           params:{'id':cmp.ID_FLOW},
@@ -50,6 +51,18 @@ Ext.define("App.controller.flows.FlowsController", {
                       }
                   });
               }
+        });
+    },
+    
+    tapList:function( me, index, target, record, e, eOpts){
+
+        
+//        Ext.Viewport.remove(Ext.Viewport.getActiveItem());
+        Ext.Viewport.setActiveItem({
+            xtype:'conversation',
+            itemId:'conv-'+record.data.id,
+            idflow: record.data.id,
+            name: record.data.name
         });
     }
 });

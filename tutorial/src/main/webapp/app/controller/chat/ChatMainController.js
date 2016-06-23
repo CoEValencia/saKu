@@ -56,7 +56,8 @@ Ext.define("App.controller.chat.ChatMainController", {
     tapList:function( me, index, target, record, e, eOpts){
         Ext.Viewport.setActiveItem({
             xtype:'flows',
-            id: record.data.id,
+            id:'flow-'+record.data.id,
+            idflow: record.data.id,
             name: record.data.name
         });
     }

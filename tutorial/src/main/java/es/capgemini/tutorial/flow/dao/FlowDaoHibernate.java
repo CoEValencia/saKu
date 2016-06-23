@@ -22,7 +22,7 @@ public class FlowDaoHibernate extends AbstractHibernateDao<Flow, Long> implement
     @Override
     public List<Flow> findByIdStream(Long id) {
         Criteria criteria = getSession().createCriteria(Flow.class);
-        criteria.add(Restrictions.eq("stream", id));
+        criteria.add(Restrictions.eq("stream.id", id));
         return criteria.list();
     }
 

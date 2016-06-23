@@ -7,7 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import es.capgemini.tutorial.stream.model.Stream;
 
 @Entity
 @Table(name = "FLOW")
@@ -23,8 +27,9 @@ public class Flow implements Serializable {
     @Column(name = "NAME")
     private String name;
 
-    @Column(name = "STREAM_ID")
-    private Long stream;
+    @JoinColumn(name = "STREAM_ID")
+    @ManyToOne
+    private Stream stream;
 
     public Long getId() {
         return id;
@@ -42,11 +47,11 @@ public class Flow implements Serializable {
         this.name = name;
     }
 
-    public Long getStream() {
+    public Stream getStream() {
         return stream;
     }
 
-    public void setStream(Long streamId) {
+    public void setStream(Stream streamId) {
         this.stream = streamId;
     }
 

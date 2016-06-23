@@ -3,6 +3,7 @@ package es.capgemini.tutorial.flow.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import es.capgemini.devon.beans.Service;
 import es.capgemini.tutorial.flow.dao.FlowDao;
@@ -24,6 +25,7 @@ public class FlowServiceDefault implements FlowService {
         return getFlowDao().get(id);
     }
 
+    @Transactional(readOnly = false)
     @Override
     public Flow update(FlowServiceDto flow) {
         Flow aux = getFlowDao().getOrNew(flow.getId());

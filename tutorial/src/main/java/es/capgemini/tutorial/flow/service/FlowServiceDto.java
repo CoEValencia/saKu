@@ -2,12 +2,14 @@ package es.capgemini.tutorial.flow.service;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import es.capgemini.tutorial.stream.model.Stream;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class FlowServiceDto {
 
     private Long id;
     private String name;
-    private Long stream;
+    private Stream stream;
 
     public Long getId() {
         return id;
@@ -25,11 +27,11 @@ public class FlowServiceDto {
         this.name = name;
     }
 
-    public Long getStream() {
+    public Stream getStream() {
         return stream;
     }
 
-    public void setStream(Long streamId) {
+    public void setStream(Stream streamId) {
         this.stream = streamId;
     }
 }

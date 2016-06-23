@@ -1,6 +1,6 @@
 Ext.define('App.store.flows.FlowsS',{
     extend:'Fwk.data.Store',
-    alias:'store.chat',
+    alias:'store.flow',
     requires:['App.model.flows.FlowsM'],
     config:{
         model:'App.model.flows.FlowsM',

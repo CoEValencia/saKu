@@ -1,9 +1,9 @@
 Ext
         .define(
-                'App.view.flows.FlowsV',
+                'App.view.conversation.ConversationV',
                 {
                     extend : Ext.form.Panel,
-                    xtype : 'flows',
+                    xtype : 'conversation',
 
                     config : {
                         baseCls : 'app_login',
@@ -13,8 +13,8 @@ Ext
 
                     constructor : function(config) {
                         config = config || {};
-                        this.ID_FLOW = config.idflow || -1;
-                        this.ID_NAME = config.name || "";
+                        this.ID_NAME = config.name;
+                        this.ID_FLOW = config.idflow;
                         
                         config.items = this.fwkItems();
                         this.callParent([ config ]);
@@ -39,37 +39,41 @@ Ext
                                 width : 200,
                                 margin : '30 40 20 40 ',
                             }]
-                        },{
+                        },
+                        {
                             xtype:'fwklist',
                             cls:'chirr-field',
-                            itemId:'flowList',
+                            itemId:'messageList',
 //                            margin : '20 40 20 40 ',
                             store: {
-                                xclass : 'App.store.flows.FlowsS'
+                                xclass : 'App.store.conversation.ConversationS'
                             },
                             disableSlection: true,
                             flex:1,
-                            action:'tapList',
                             itemTpl: new Ext.XTemplate(
-                                    '<center><tpl>',
-                                    '{name}',
-                                    '</tpl></center>'
+                                    '<tpl>',
+                                    '{message}',
+                                    '</tpl>'
                             )
-
-                        },{
+                        },
+                        {
                             xtype:'panel',
                             layout: {
                                 type: 'hbox',
                                 pack : 'end'
                             },
-                            style: 'background-color:#FA5858',
                             items:[{
+                                xtype : 'textfield',
+                                name : 'field',
+                                flex : 0.1,
+                                itemId : 'nameFieldreg',
+                                margin : '20 40 20 40 ',
+                                placeHolder : 'Escribe...'
+                            },{
                                 xtype : 'button',
-                                iconCls:'add',
-                                
+                                iconCls:'arrow_right',
                                 cls : 'chirr-button-gray',
                                 margin : '20 40 20 40 ',
-                                action : 'addNewFlow'
                             }]
                         } ];
                     }
