@@ -8,12 +8,17 @@ import org.springframework.transaction.annotation.Transactional;
 import es.capgemini.devon.beans.Service;
 import es.capgemini.tutorial.flow.dao.FlowDao;
 import es.capgemini.tutorial.flow.model.Flow;
+import es.capgemini.tutorial.stream.model.Stream;
+import es.capgemini.tutorial.stream.service.StreamService;
 
 @Service("flowService")
 public class FlowServiceDefault implements FlowService {
 
     @Autowired
-    private FlowDao flow;
+    private FlowDao flowDao;
+
+    @Autowired
+    private StreamService streamManager;
 
     @Override
     public List<Flow> find(FlowServiceDto dto) {
@@ -28,12 +33,14 @@ public class FlowServiceDefault implements FlowService {
     @Transactional(readOnly = false)
     @Override
     public Flow update(FlowServiceDto flow) {
-        Flow aux = getFlowDao().getOrNew(flow.getId());
+        Stream st = streamManager.getUsuario(flow.getStreamId());
+
+        Flow aux = flowDao.getOrNew(flow.getId());
 
         aux.setName(flow.getName());
-        aux.setStream(flow.getStream());
+        aux.setStream(st);
 
-        getFlowDao().saveOrUpdate(aux);
+        flowDao.saveOrUpdate(aux);
 
         return aux;
     }
@@ -44,7 +51,7 @@ public class FlowServiceDefault implements FlowService {
     }
 
     public FlowDao getFlowDao() {
-        return flow;
+        return flowDao;
     }
 
     @Override

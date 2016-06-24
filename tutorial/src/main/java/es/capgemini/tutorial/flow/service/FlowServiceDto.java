@@ -8,15 +8,33 @@ import es.capgemini.tutorial.stream.model.Stream;
 public class FlowServiceDto {
 
     private Long id;
+    private Long streamId;
     private String name;
-    private Stream stream;
+    //private Stream stream;
+    
 
+    public Long getStreamId() {
+        return streamId;
+    }
+
+    
+    /**
+     * @return the id
+     */
     public Long getId() {
         return id;
     }
 
+    
+    /**
+     * @param id the id to set
+     */
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public void setStreamId(Long streamId) {
+        this.streamId = streamId;
     }
 
     public String getName() {
@@ -27,11 +45,11 @@ public class FlowServiceDto {
         this.name = name;
     }
 
-    public Stream getStream() {
-        return stream;
-    }
-
-    public void setStream(Stream streamId) {
-        this.stream = streamId;
-    }
+//    public Stream getStream() {
+//        return stream;
+//    }
+//
+//    public void setStream(Stream streamId) {
+//        this.stream = streamId;
+//    }
 }
