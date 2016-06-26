@@ -9,7 +9,15 @@ Ext.define('App.model.conversation.ConversationM',{
                {
                    name:'message',
                    type:'string'
-                 }
+               },
+               {
+                   name:'user.id',
+                   type:'int'
+               },
+               {
+                   name:'user.name',
+                   type:'string'
+               }
        ]
    }
 });

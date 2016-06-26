@@ -47,7 +47,6 @@ Ext
                             store: {
                                 xclass : 'App.store.flows.FlowsS'
                             },
-                            disableSlection: true,
                             flex:1,
                             action:'tapList',
                             itemTpl: new Ext.XTemplate(

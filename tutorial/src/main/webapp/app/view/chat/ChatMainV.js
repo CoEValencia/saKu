@@ -70,7 +70,6 @@ Ext.define('App.view.chat.ChatMainV', {
                                       store: {
                                           xclass : 'App.store.chat.ChatS'
                                       },
-                                      disableSlection: true,
                                       flex:1,
                                       action:'tapList',
                                       itemTpl: new Ext.XTemplate(

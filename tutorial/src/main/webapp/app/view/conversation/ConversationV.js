@@ -48,11 +48,15 @@ Ext
                             store: {
                                 xclass : 'App.store.conversation.ConversationS'
                             },
-                            disableSlection: true,
+                            disableSelection: true,
+                            scrollToTopOnRefresh:false,
                             flex:1,
                             itemTpl: new Ext.XTemplate(
+                                    '{% var bStyle = values["user.id"] == Fwk.Security.userInfo.id ? "color: #58FA58;float: right;" : ""; %}',
+                                    '{% var name = values["user.id"] != Fwk.Security.userInfo.id ? values["user.name"] : ""; %}',
                                     '<tpl>',
-                                    '{message}',
+                                    '<div style="font-size:12px; color:#A4A4A4; font-style: italic;">{[name]}</div>',
+                                    '<div style="{[bStyle]}">{message}</div>',
                                     '</tpl>'
                             )
                         },

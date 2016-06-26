@@ -43,6 +43,7 @@ Ext.define("App.controller.conversation.ConversationController", {
             params:{'flow.id':id, 'message': message, 'user.id':Fwk.Security.userInfo.id},
             mask: false,
             success: function(response, opts) {
+                response['user.id'] = response.user.id;
                 Ext.ComponentQuery.query("#messageList")[0].getStore().add(response);
                 Ext.ComponentQuery.query("#textToSend")[0].setValue("");
             }
