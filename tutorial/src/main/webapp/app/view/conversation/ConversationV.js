@@ -66,7 +66,7 @@ Ext
                                 xtype : 'textfield',
                                 name : 'field',
                                 flex : 0.1,
-                                itemId : 'nameFieldreg',
+                                itemId : 'textToSend',
                                 margin : '20 40 20 40 ',
                                 placeHolder : 'Escribe...'
                             },{
@@ -74,6 +74,7 @@ Ext
                                 iconCls:'arrow_right',
                                 cls : 'chirr-button-gray',
                                 margin : '20 40 20 40 ',
+                                action: 'sendMessage'
                             }]
                         } ];
                     }

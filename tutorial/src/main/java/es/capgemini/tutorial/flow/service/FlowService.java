@@ -6,7 +6,7 @@ import es.capgemini.devon.bo.annotations.BusinessProxy;
 import es.capgemini.devon.bo.annotations.WebBusinessOperation;
 import es.capgemini.tutorial.flow.model.Flow;
 
-@BusinessProxy
+
 public interface FlowService {
 
     @WebBusinessOperation(value = "FLOW_FIND", convertToClass = FlowServiceDto.class)

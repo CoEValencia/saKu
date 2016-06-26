@@ -6,7 +6,7 @@ import es.capgemini.devon.bo.annotations.BusinessProxy;
 import es.capgemini.devon.bo.annotations.WebBusinessOperation;
 import es.capgemini.tutorial.stream.model.Stream;
 
-@BusinessProxy
+
 public interface StreamService {
 
     @WebBusinessOperation(value = "STREAM_FIND", convertToClass = StreamServiceDto.class)
