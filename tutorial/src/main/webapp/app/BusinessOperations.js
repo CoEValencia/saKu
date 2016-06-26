@@ -15,6 +15,6 @@ Ext.define('App.BusinessOperations', {
         'findFlowsById' : 'bo/FLOW_FIND_BY_ID'  +  Fwk.config.fwkBOPathSuffix,
         'flowsUpdate' : 'bo/FLOW_UPDATE'  +  Fwk.config.fwkBOPathSuffix,
         'messageByFlow' : 'bo/MESSAGE_FIND_BY_FLOW' +  Fwk.config.fwkBOPathSuffix,
-        'sendMessage' : 'bo/MESSAGE_UPDATE' +  Fwk.config.fwkBOPathSuffix
+        'sendMessage'  : 'bo/MESSAGE_UPDATE' +  Fwk.config.fwkBOPathSuffix
     });
 });

@@ -19,7 +19,7 @@ Fwk.application({
          'chat.ChatM', 'conversation.ConversationM', 'flows.FlowsM'
     ],
     stores: [
-         'chat.ChatS', 'flows.FlowsS', 'conversation.ConversationS'
+         'chat.ChatS', 'flows.FlowsS'
     ],
     controllers: [
         'Main',

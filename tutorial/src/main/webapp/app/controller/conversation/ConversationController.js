@@ -34,14 +34,14 @@ Ext.define("App.controller.conversation.ConversationController", {
         Fwk.Page.getViewport().setActiveItem(prev);
     },
     
-    sendMessage:function(cmp){
+    sendMessage: function (cmp) {
         
         var id = cmp.up('conversation').ID_FLOW;
-        var message = Ext.ComponentQuery.query("#textToSend")[0].getValue();
+        var message =   Ext.ComponentQuery.query("#textToSend")[0].getValue();
         
         App.bo.sendMessage({
-            params:{'flow.id':id, 'message': message,'user.id':Fwk.Security.userInfo.id},
-            mask: true,
+            params:{'flow.id':id, 'message': message, 'user.id':Fwk.Security.userInfo.id},
+            mask: false,
             success: function(response, opts) {
                 Ext.ComponentQuery.query("#messageList")[0].getStore().add(response);
                 Ext.ComponentQuery.query("#textToSend")[0].setValue("");

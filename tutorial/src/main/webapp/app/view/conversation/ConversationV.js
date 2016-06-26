@@ -74,7 +74,7 @@ Ext
                                 iconCls:'arrow_right',
                                 cls : 'chirr-button-gray',
                                 margin : '20 40 20 40 ',
-                                action: 'sendMessage'
+                                action : 'sendMessage'
                             }]
                         } ];
                     }
