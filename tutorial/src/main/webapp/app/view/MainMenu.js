@@ -11,6 +11,10 @@ Ext.define('App.view.MainMenu', {
                         text: 'Chats',
                         main: true,
                         view: {xtype: 'chatMainV'}
+                    },{
+                        text: 'Favs. Chats',
+                        main:false,
+                        vies:{xtype: ''}
                     }
                 ]
 

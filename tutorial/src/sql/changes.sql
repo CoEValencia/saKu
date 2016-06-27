@@ -35,3 +35,19 @@ INSERT INTO FLOW (Name,STREAM_ID) VALUES ('Ocio',1);
 /* DEFAULT MESSAGES*/
 INSERT INTO MESSAGE (MESSAGE,FLOW_ID,USER_ID) VALUES ('Hola, ¿Que tal?',1,1);
 INSERT INTO MESSAGE (MESSAGE,FLOW_ID,USER_ID) VALUES ('¿Que se cuenta la gente?',1,1);
+
+
+/* Tabla Favoritos. Cada usuario puede tener unos chats favoritos*/
+CREATE TABLE FAVS (
+  ID                     BIGINT(16)       NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  USER_ID                BIGINT(16)       NOT NULL,
+  STREAM_ID              BIGINT(16)       NOT NULL,
+  
+ FOREIGN KEY (STREAM_ID) REFERENCES STREAM (ID),
+ FOREIGN KEY (USER_ID) REFERENCES USERS (ID)
+);
+
+
+/* Default values for FAVS*/
+INSERT INTO FAVS (USER_ID, STREAM_ID) VALUES (2, 1);
+INSERT INTO FAVS (USER_ID, STREAM_ID) VALUES (2, 1);
