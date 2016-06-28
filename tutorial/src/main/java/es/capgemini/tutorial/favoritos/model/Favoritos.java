@@ -25,7 +25,7 @@ public class Favoritos implements Serializable {
     @Column(name = "ID")
     private Long id;
 
-    @Column(name = "USER_ID")
+    @JoinColumn(name = "USER_ID")
     @ManyToOne
     private Usuario user;
 

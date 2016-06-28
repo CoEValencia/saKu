@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import es.capgemini.devon.beans.Service;
+import es.capgemini.tutorial.flow.service.FlowService;
+import es.capgemini.tutorial.flow.service.FlowServiceDto;
 import es.capgemini.tutorial.stream.dao.StreamDao;
 import es.capgemini.tutorial.stream.model.Stream;
 
@@ -14,6 +16,9 @@ public class StreamServiceDefault implements StreamService {
 
     @Autowired
     private StreamDao stream;
+
+    @Autowired
+    private FlowService flowManager;
 
     @Override
     public List<Stream> find(StreamServiceDto dto) {
@@ -33,11 +38,17 @@ public class StreamServiceDefault implements StreamService {
     @Transactional(readOnly = false)
     @Override
     public Stream update(StreamServiceDto stream) {
+
         Stream aux = getStreamDao().getOrNew(stream.getId());
-
         aux.setName(stream.getName());
-
         getStreamDao().saveOrUpdate(aux);
+
+        if (stream.getId() == null) {
+            FlowServiceDto nuevo = new FlowServiceDto();
+            nuevo.setName("[ MAIN ]");
+            nuevo.setStreamId(aux.getId());
+            getFlowDao().update(nuevo);
+        }
 
         return aux;
     }
@@ -50,6 +61,10 @@ public class StreamServiceDefault implements StreamService {
 
     public StreamDao getStreamDao() {
         return stream;
+    }
+
+    public FlowService getFlowDao() {
+        return flowManager;
     }
 
 }

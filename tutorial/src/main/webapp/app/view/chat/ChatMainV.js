@@ -10,6 +10,16 @@ Ext.define('App.view.chat.ChatMainV', {
 
     initialize: function() {
         var me = this;
+        
+//        var socket = new SockJS( 'https://127.0.0.1:8080/hello.wbo');
+//        stompClient = Stomp.over(socket);
+//        stompClient.connect({}, function(frame) {
+//            setConnected(true);
+//            console.log('Connected: ' + frame);
+//            stompClient.subscribe('/topic/greetings', function(greeting){
+//                showGreeting(JSON.parse(greeting.body).content);
+//            });
+//        });
 
         App.bo.permisosCheck({
             params:{id: Fwk.Security.userInfo.id},

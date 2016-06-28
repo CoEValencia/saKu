@@ -32,6 +32,14 @@
 		    <artifactId>mail</artifactId>
 		    <version>1.4</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-websocket -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-websocket</artifactId>
+		    <version>4.0.3.RELEASE</version>
+		</dependency>
+		
 	</dependencies>
 
 </project>
