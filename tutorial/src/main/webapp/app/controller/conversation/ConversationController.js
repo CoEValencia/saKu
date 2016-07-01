@@ -13,6 +13,9 @@ Ext.define("App.controller.conversation.ConversationController", {
             },
             'conversation [action=sendMessage]': {
                 tap: 'sendMessage'
+            },
+            'conversation textfield#textToSend': { //handle Enter on the companyName textfield
+                keyup: 'enterKeyPress'
             }
         }
     },
@@ -64,5 +67,25 @@ Ext.define("App.controller.conversation.ConversationController", {
                 Ext.ComponentQuery.query("#textToSend")[0].setValue("");
             }
         });
+    },
+    
+    enterKeyPress: function(obj, e, eOpts ){
+        if(e.event.keyCode == 13){
+            var id = obj.up('conversation').ID_FLOW;
+            var message =   Ext.ComponentQuery.query("#textToSend")[0].getValue();
+            
+            App.bo.sendMessage({
+                params:{'flow.id':id, 'message': message, 'user.id':Fwk.Security.userInfo.id},
+                mask: false,
+                success: function(response, opts) {
+                    response['user.id'] = response.user.id;
+                    Ext.ComponentQuery.query("#messageList")[0].getStore().add(response);
+                    setTimeout(function(){
+                        Ext.ComponentQuery.query("#messageList")[0].getScrollable().getScroller().scrollToEnd(true);
+                    },100);  
+                    Ext.ComponentQuery.query("#textToSend")[0].setValue("");
+                }
+            });
+        }
     }
 });

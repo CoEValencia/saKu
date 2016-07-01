@@ -13,10 +13,10 @@ Ext.define("App.controller.chat.ChatMainController", {
             },
             'chatMainV [action=tapList]':{
                 itemsingletap:'tapList'
+            },
+            'chatMainV textfield#searchField': { //handle Enter on the companyName textfield
+                keyup: 'enterKeyPress'
             }
-//            'chatMainV': {
-//                painted: 'loadData'
-//            }
         }
     },
 
@@ -60,5 +60,23 @@ Ext.define("App.controller.chat.ChatMainController", {
             idflow: record.data.id,
             name: record.data.name
         });
+    },
+    
+    enterKeyPress:function(obj, e, eOpts ){
+        if(e.event.keyCode == 13){
+            var filter = Ext.ComponentQuery.query("#searchField")[0].getValue();
+            if(filter === ''){
+                return;
+            }
+            App.bo.findChatsLike({
+                params:{'name':filter},
+                mask: true,
+                success: function(response, opts) {
+                    Ext.ComponentQuery.query("#chatList")[0].getStore().removeAll();
+                    Ext.ComponentQuery.query("#chatList")[0].getStore().addData(response);
+                }
+            });
+        }
+        
     }
 });

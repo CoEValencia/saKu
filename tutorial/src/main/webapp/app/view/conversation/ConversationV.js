@@ -69,6 +69,7 @@ Ext
                             items:[{
                                 xtype : 'textfield',
                                 name : 'field',
+                                action:'enteraction',
                                 flex : 0.1,
                                 itemId : 'textToSend',
                                 margin : '20 40 20 40 ',
