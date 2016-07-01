@@ -1,5 +1,9 @@
 package es.capgemini.tutorial.message.service;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +38,7 @@ public class MessageServiceDefault implements MessageService {
         aux.setFlow(mess.getFlow());
         aux.setUser(mess.getUser());
         aux.setMessage(mess.getMessage());
+        aux.setDate(new Date());
 
         getMessageDao().saveOrUpdate(aux);
 
@@ -50,7 +55,15 @@ public class MessageServiceDefault implements MessageService {
     }
 
     @Override
-    public List<Message> findByFlow(Long id) {
-        return getMessageDao().findByFlow(id);
+    public List<Message> findByFlow(Long id, String superior) {
+        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+        Date date = null;
+        try {
+            date = formatter.parse(superior);
+        } catch (ParseException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return getMessageDao().findByFlow(id, date);
     }
 }

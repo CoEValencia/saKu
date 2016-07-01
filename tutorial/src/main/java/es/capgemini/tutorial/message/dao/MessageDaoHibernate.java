@@ -1,5 +1,6 @@
 package es.capgemini.tutorial.message.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -20,9 +21,10 @@ public class MessageDaoHibernate extends AbstractHibernateDao<Message, Long> imp
     }
 
     @Override
-    public List<Message> findByFlow(Long id) {
+    public List<Message> findByFlow(Long id, Date last) {
         Criteria criteria = getSession().createCriteria(Message.class);
         criteria.add(Restrictions.eq("flow.id", id));
+        //        criteria.add(Restrictions.gt("date", last.getTime()));
         return criteria.list();
     }
 

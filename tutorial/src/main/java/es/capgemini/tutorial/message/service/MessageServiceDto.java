@@ -1,5 +1,7 @@
 package es.capgemini.tutorial.message.service;
 
+import java.util.Date;
+
 import es.capgemini.tutorial.flow.model.Flow;
 import es.capgemini.tutorial.usuario.model.Usuario;
 
@@ -9,6 +11,7 @@ public class MessageServiceDto {
     private String message;
     private Usuario user;
     private Flow flow;
+    private Date date;
 
     public Long getId() {
         return id;
@@ -40,5 +43,13 @@ public class MessageServiceDto {
 
     public void setFlow(Flow flow) {
         this.flow = flow;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }

@@ -18,17 +18,30 @@ Ext.define("App.controller.conversation.ConversationController", {
     },
 
     loadData : function(cmp){
-      App.bo.messageByFlow({
-          params:{'id':cmp.ID_FLOW},
-          mask: true,
-          success: function(response, opts) {
-              Ext.ComponentQuery.query("#messageList")[0].getStore().removeAll();
-              Ext.ComponentQuery.query("#messageList")[0].getStore().addData(response);
-          }
-      });
+        
+//        Ext.ComponentQuery.query("#messageList")[0].getScrollable().getScroller().scrollToEnd();
+        this.TIMMER = setInterval(function () {
+            var last ="2016-06-29T22:00:00";
+            if(Ext.ComponentQuery.query("#messageList")[0].getStore().data.length != 0){
+                last = Ext.ComponentQuery.query("#messageList")[0].getStore().last().data.date;
+            }
+              App.bo.messageByFlow({
+                  params:{'id':cmp.ID_FLOW, 'superior':last},
+                  mask: false,
+                  success: function(response, opts) {
+                      if(response.length > 0){
+                          Ext.ComponentQuery.query("#messageList")[0].getStore().addData(response);
+                          setTimeout(function(){
+                              Ext.ComponentQuery.query("#messageList")[0].getScrollable().getScroller().scrollToEnd(true);
+                          },100);  
+                      }
+                  }
+              });
+          }, 800);
     },
     
-    goBack: function(){
+    goBack: function(cmp){
+        clearInterval(this.TIMMER);
         var prev = Fwk.Page.getViewport().getItems().items.length-1;
         Ext.Viewport.remove(Ext.Viewport.getActiveItem());
         Fwk.Page.getViewport().setActiveItem(prev);
@@ -45,6 +58,9 @@ Ext.define("App.controller.conversation.ConversationController", {
             success: function(response, opts) {
                 response['user.id'] = response.user.id;
                 Ext.ComponentQuery.query("#messageList")[0].getStore().add(response);
+                setTimeout(function(){
+                    Ext.ComponentQuery.query("#messageList")[0].getScrollable().getScroller().scrollToEnd(true);
+                },100);  
                 Ext.ComponentQuery.query("#textToSend")[0].setValue("");
             }
         });

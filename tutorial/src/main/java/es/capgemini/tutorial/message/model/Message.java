@@ -1,6 +1,7 @@
 package es.capgemini.tutorial.message.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -36,6 +37,9 @@ public class Message implements Serializable {
     @ManyToOne
     private Flow flow;
 
+    @Column(name = "DATE")
+    private Date date;
+
     public Long getId() {
         return id;
     }
@@ -66,6 +70,14 @@ public class Message implements Serializable {
 
     public void setFlow(Flow flow) {
         this.flow = flow;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
 }

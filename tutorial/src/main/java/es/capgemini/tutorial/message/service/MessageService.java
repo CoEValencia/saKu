@@ -22,5 +22,5 @@ public interface MessageService {
     public void delete(Long id);
 
     @WebBusinessOperation(value = "MESSAGE_FIND_BY_FLOW", convertToClass = MessageServiceDto.class)
-    public List<Message> findByFlow(Long id);
+    public List<Message> findByFlow(Long id, String superior);
 }
