@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'titleFont';
+    src: url('font/Blacksword.otf');
+}
+
+
 .app_login{
 	background-color: white;
 	color: white;

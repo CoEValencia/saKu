@@ -35,7 +35,7 @@ Ext
                                 action : 'goBack'
                             },{
                                 xtype : 'label',
-                                html : '<span style="font-style: italic;color:white;font-size:22px;align:center;text-align: center;z-index:100;">'+this.ID_NAME+'<span>',
+                                html : '<span style="font-family:titleFont;color:white;font-size:22px;align:center;text-align: center;z-index:100;">'+this.ID_NAME+'<span>',
                                 width : 200,
                                 margin : '30 40 20 40 ',
                             }]
@@ -61,7 +61,7 @@ Ext
                                     '</tpl>', {
                                         formatDate: function(value) {
                                             if (Ext.Date.format(value,'d/m/Y') != Ext.Date.format(new Date(),'d/m/Y'))
-                                                return  'El ' + Ext.Date.format(value,'d/m/Y') + ' a las ' + Ext.Date.format(value,'H:m');
+                                                return  'El ' + Ext.Date.format(value,'d/m/Y') + ' a las ' + Ext.Date.format(value,'H:i');
                                             else return 'Hoy a las ' + Ext.Date.format(value,'H:i');
                                 }
                             }
