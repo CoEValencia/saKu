@@ -52,12 +52,20 @@ Ext
                             scrollToTopOnRefresh:false,
                             flex:1,
                             itemTpl: new Ext.XTemplate(
-                                    '{% var bStyle = values["user.id"] == Fwk.Security.userInfo.id ? "color: #58FA58;float: right;" : ""; %}',
+                                    '{% var bStyle = values["user.id"] == Fwk.Security.userInfo.id ? "color: #58FA58 ; text-align:right; margin-top:20px !important;"  : "margin-top:20px !important;"; %}',                                   
                                     '{% var name = values["user.id"] != Fwk.Security.userInfo.id ? values["user.name"] : ""; %}',
                                     '<tpl>',
-                                    '<div style="font-size:12px; color:#A4A4A4; font-style: italic;">{[name]}</div>',
+                                    '<div class="message_name"><span>{[name]}</span></div>',
+                                    '<div style="font-size:12px; color:#A4A4A4; text-align: right;font-style: italic; float: right;"><span>{date:this.formatDate}</span></div>',
                                     '<div style="{[bStyle]}">{message}</div>',
-                                    '</tpl>'
+                                    '</tpl>', {
+                                        formatDate: function(value) {
+                                            if (Ext.Date.format(value,'d/m/Y') != Ext.Date.format(new Date(),'d/m/Y'))
+                                                return  'El ' + Ext.Date.format(value,'d/m/Y') + ' a las ' + Ext.Date.format(value,'H:m');
+                                            else return 'Hoy a las ' + Ext.Date.format(value,'H:i');
+                                }
+                            }
+                                    
                             )
                         },
                         {

@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -56,7 +57,9 @@ public class MessageServiceDefault implements MessageService {
 
     @Override
     public List<Message> findByFlow(Long id, String superior) {
-        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+        Locale locale = new Locale("ES");
+        
+        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss" , locale);
         Date date = null;
         try {
             date = formatter.parse(superior);

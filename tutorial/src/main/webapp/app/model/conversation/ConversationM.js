@@ -19,7 +19,8 @@ Ext.define('App.model.conversation.ConversationM',{
                    type:'string'
                },{
                    name: 'date',
-                   type: 'string'
+                   type: 'date',
+                   dateFormat: 'c'
                }
        ]
    }
