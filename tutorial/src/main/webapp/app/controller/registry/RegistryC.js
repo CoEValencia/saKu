@@ -14,6 +14,9 @@ Ext.define("App.controller.registry.RegistryC", {
             'registry [action=newUser]': {
                 tap: 'doNewUser'
             },
+            'registry [action=uploadImage]': {
+                tap: 'doUploadImage'
+            },
             'registry [action=goBack]': {
                 tap: 'goBack'
             }
@@ -23,7 +26,14 @@ Ext.define("App.controller.registry.RegistryC", {
     goBack: function(){
         Ext.Viewport.remove(Ext.Viewport.getActiveItem());
     },
-    
+
+    doUploadImage: function(){
+        Ext.Viewport.setActiveItem({
+            xtype:'imagePanel'
+        });
+    },
+
+
     doNewUser: function(btn){    
         
         var name = Ext.ComponentQuery.query("#nameFieldreg")[0].getValue();

@@ -29,7 +29,8 @@ Fwk.application({
         'confirmuser.ConfirmUserController', "App.controller.chat.ChatAddController",
         'chat.ChatMainController',
         'flows.FlowsController',
-        'conversation.ConversationController'
+        'conversation.ConversationController',
+        'image.ImageC'
     ],
     views: [
         'MainMenu',
@@ -40,6 +41,7 @@ Fwk.application({
         'registry.RegistryV',
         'confirmuser.ConfirmUser',
         'flows.FlowsV',
+        'image.ImageV',
         'App.view.conversation.ConversationV'
     ],
 

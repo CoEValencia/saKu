@@ -40,6 +40,7 @@ Ext
                             cls:'image-circle',
                             margin : 'auto',
                             src: 'img/camera-icon.png',
+                            action:'uploadImage'
                         },{
                             xtype : 'textfield',
                             name : 'field',
