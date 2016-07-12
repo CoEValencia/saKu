@@ -8,8 +8,8 @@ Ext.define("App.controller.image.ImageC", {
             'imagePanel [action=goBack]': {
                 tap: 'goBack'
             },
-            'imagePanel [action=newImage]': {
-                tap: 'uploadImg'
+            'imagePanel [action=tapImage]': {
+                tap: 'onTapImage'
             }
         }
     },
@@ -25,5 +25,32 @@ Ext.define("App.controller.image.ImageC", {
       uploadImg: function(){
 
     },
+    
+      onTapImage: function(imageTapped){
+          var catImage=Ext.getCmp("cat_avatar");
+          var dogImage=Ext.getCmp("dog_avatar");
+          var rabbitImage=Ext.getCmp("rabbit_avatar");
+          var penguinImage=Ext.getCmp("penguin_avatar");
+
+          imageTapped.setCls("image-selected");
+
+          if (imageTapped.getId()!=catImage.getId()){
+              catImage.setCls("image-circle");
+          }
+
+          if (imageTapped.getId()!=dogImage.getId()){
+              dogImage.setCls("image-circle");
+          }
+
+          if (imageTapped.getId()!=rabbitImage.getId()){
+              rabbitImage.setCls("image-circle");
+          }
+
+          if (imageTapped.getId()!=penguinImage.getId()){
+              penguinImage.setCls("image-circle");
+          }
+          
+    },
+
 
 });

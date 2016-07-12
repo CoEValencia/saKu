@@ -7,7 +7,7 @@ Ext
 
                     config : {
                         baseCls : 'app_login',
-                        scrollable : true,
+                        scrollable : false,
                         fullscreen : true
                     },
 
@@ -31,38 +31,46 @@ Ext
                                 action : 'goBack'
                             },{
                                 xtype : 'label',
-                                html : '<span style="font-style: italic;color:red;font-size:12px;align:center;text-align: center;z-index:100;">Selecciona la imagen:<span>',
+                                html : '<span style="font-style: italic;color:red;font-size:15px;align:center;text-align: center;z-index:100;">Selecciona una imagen:<span>',
                                 width : 200,
                                 margin : '30 40 20 40 ',
                             }]
                         },{
                             xtype: 'image',
                             cls:'image-circle',
+                            id: 'cat_avatar',
                             margin : '10 auto',
                             src: 'img/cat-icon.png',
+                             action : 'tapImage'
                         },{
                             xtype: 'image',
                             cls:'image-circle',
+                            id: 'rabbit_avatar',
                             margin : '10 auto',
                             src: 'img/rabbit-icon.png',
+                             action : 'tapImage'
                            // margin: '10 0 0 0'
                         },{
                             xtype: 'image',
                             cls:'image-circle',
+                            id: 'dog_avatar',
                             margin : '10 auto',
                             src: 'img/dog-icon.png',
+                             action : 'tapImage'
                         },{
                             xtype: 'image',
                             cls:'image-circle',
+                            id: 'penguin_avatar',
                             margin : '10 auto',
                             src: 'img/penguin-icon.png',
+                            action : 'tapImage'
    
                         },{
                             xtype : 'button',
                             text : 'Aceptar',
                             cls : 'chirr-button',
                             margin : '20 40 20 40 ',
-                            action : 'newImage'
+                            //action : 'newImage'
                         } ];
                     }
 
