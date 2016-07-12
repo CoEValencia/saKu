@@ -49,7 +49,6 @@ Ext
                             margin : '10 auto',
                             src: 'img/rabbit-icon.png',
                              action : 'tapImage'
-                           // margin: '10 0 0 0'
                         },{
                             xtype: 'image',
                             cls:'image-circle',
@@ -70,7 +69,7 @@ Ext
                             text : 'Aceptar',
                             cls : 'chirr-button',
                             margin : '20 40 20 40 ',
-                            //action : 'newImage'
+                            action : 'saveImage'
                         } ];
                     }
 

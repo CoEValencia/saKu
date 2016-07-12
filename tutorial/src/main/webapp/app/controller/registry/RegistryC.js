@@ -5,8 +5,8 @@ Ext.define("App.controller.registry.RegistryC", {
 
     config: {
         control: {
-            'registry': {
-                action: 'doLogin'
+            'registry': {                
+                fireCheckImage: 'checkImage'
             },
             'registry button[fwkEvent=login]': {
                 tap: 'doLogin'
@@ -35,13 +35,20 @@ Ext.define("App.controller.registry.RegistryC", {
 
 
     doNewUser: function(btn){    
+        if (typeof globalImageTapped=="string"){
+            var userPic=globalImageTapped;
+            globalImageTapped=null;
+        }
+        else {
+            var userPic=null;
+        }
         
         var name = Ext.ComponentQuery.query("#nameFieldreg")[0].getValue();
         var email = Ext.ComponentQuery.query("#emailTextField")[0].getValue();
         var password = Ext.ComponentQuery.query("#passwordTextField")[0].getValue();
         var rePassword = Ext.ComponentQuery.query("#passwordReTextField")[0].getValue();
         //comit
-        
+
         if(password === rePassword && password != ""){
         
             Ext.Viewport.mask();
@@ -50,7 +57,8 @@ Ext.define("App.controller.registry.RegistryC", {
                 params:{
                   userName:name,
                   password:password,
-                  email:email
+                  email:email,
+                  userPic:userPic
                 },
                 success: function(response){
                     Fwk.Msg.error(response.responseText, function(){location.reload();});
@@ -64,10 +72,13 @@ Ext.define("App.controller.registry.RegistryC", {
     },
 
 
-    /**
-     * Se ejecuta cuando el usuario quiere envíar el formulario de login al servidor.
-     */
-    doLogin: function(btn) {
+    
+    checkImage: function() {
+        if (typeof globalImageTapped=="string"){
+            var avatar=Ext.getCmp('avatarImage');
+            avatar.setSrc('img/'+globalImageTapped.split("_")[0]+'-icon.png');
+        }
+        
     },
     
 

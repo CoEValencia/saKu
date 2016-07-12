@@ -16,7 +16,12 @@ Ext
                         config.items = this.fwkItems();
                         this.callParent([ config ]);
                     },
-
+                    
+                    initialize: function () {                
+                    this.onBefore("painted", function () {
+                        this.fireEvent('fireCheckImage');            
+                });
+            },
                     fwkItems : function() {
                         return [ {
                             xtype:'panel',
@@ -37,6 +42,7 @@ Ext
                             }]
                         },{
                             xtype: 'image',
+                            id:'avatarImage',
                             cls:'image-circle',
                             margin : 'auto',
                             src: 'img/camera-icon.png',

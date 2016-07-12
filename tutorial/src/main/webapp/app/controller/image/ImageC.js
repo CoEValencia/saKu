@@ -10,20 +10,19 @@ Ext.define("App.controller.image.ImageC", {
             },
             'imagePanel [action=tapImage]': {
                 tap: 'onTapImage'
+            },
+            'imagePanel [action=saveImage]': {
+                tap: 'onTapAceptar'
             }
         }
     },
 
     goBack: function(){
 //      Ext.Viewport.remove(Ext.Viewport.getActiveItem());
+        globalImageTapped=null;
         var prev = Fwk.Page.getViewport().getItems().items.length-1;
         Ext.Viewport.remove(Ext.Viewport.getActiveItem());
         Fwk.Page.getViewport().setActiveItem(prev);
-    },
-    
-    
-      uploadImg: function(){
-
     },
     
       onTapImage: function(imageTapped){
@@ -31,6 +30,8 @@ Ext.define("App.controller.image.ImageC", {
           var dogImage=Ext.getCmp("dog_avatar");
           var rabbitImage=Ext.getCmp("rabbit_avatar");
           var penguinImage=Ext.getCmp("penguin_avatar");
+          
+          globalImageTapped = imageTapped.getId();
 
           imageTapped.setCls("image-selected");
 
@@ -51,6 +52,12 @@ Ext.define("App.controller.image.ImageC", {
           }
           
     },
+    
+    onTapAceptar: function(btn){
+       var prev = Fwk.Page.getViewport().getItems().items.length-1;
+        Ext.Viewport.remove(Ext.Viewport.getActiveItem());         
+        Fwk.Page.getViewport().setActiveItem(prev);
+    }
 
 
 });
