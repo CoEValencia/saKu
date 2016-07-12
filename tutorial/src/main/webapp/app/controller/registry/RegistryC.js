@@ -37,7 +37,6 @@ Ext.define("App.controller.registry.RegistryC", {
     doNewUser: function(btn){    
         if (typeof globalImageTapped=="string"){
             var userPic=globalImageTapped;
-            globalImageTapped=null;
         }
         else {
             var userPic=null;
@@ -48,7 +47,7 @@ Ext.define("App.controller.registry.RegistryC", {
         var password = Ext.ComponentQuery.query("#passwordTextField")[0].getValue();
         var rePassword = Ext.ComponentQuery.query("#passwordReTextField")[0].getValue();
         //comit
-
+        
         if(password === rePassword && password != ""){
         
             Ext.Viewport.mask();
@@ -63,6 +62,7 @@ Ext.define("App.controller.registry.RegistryC", {
                 success: function(response){
                     Fwk.Msg.error(response.responseText, function(){location.reload();});
                     Ext.Viewport.unmask();
+                    //globalImageTapped=null;
                 }, 
                 failure: function () {
                     Ext.Viewport.unmask();

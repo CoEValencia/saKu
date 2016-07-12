@@ -30,7 +30,7 @@ public class MainController {
      * */
     @RequestMapping(value = "/public/ADD_NEW_USER.wbo", method = RequestMethod.POST)
     @ResponseBody
-    public String main(@RequestParam("userName") String userName, @RequestParam("password") String pass, @RequestParam("email") String email)
+    public String main(@RequestParam("userName") String userName, @RequestParam("password") String pass, @RequestParam("email") String email,@RequestParam("userPic") String userPic)
             throws NoSuchAlgorithmException, UnsupportedEncodingException {
         UsuarioServiceDto dto = new UsuarioServiceDto();
         Usuario usuario = null;
@@ -41,6 +41,7 @@ public class MainController {
             dto.setName(userName);
             dto.setUserName(userName);
             dto.setEmail(email);
+            dto.setUserPic(userPic);
 
             Usuario aux = businessProxy.usuario.update(dto);
             dto.setPassword(Utils.encryptPassword(pass + "{" + aux.getId() + "}"));

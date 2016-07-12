@@ -10,6 +10,7 @@ public class UsuarioServiceDto {
     private String password;
     private String name;
     private String email;
+    private String userPic;
 
     public Long getId() {
         return id;
@@ -50,4 +51,22 @@ public class UsuarioServiceDto {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    
+    /**
+     * @return the userPic
+     */
+    public String getUserPic() {
+        return userPic;
+    }
+
+    
+    /**
+     * @param userPic the userPic to set
+     */
+    public void setUserPic(String userPic) {
+        this.userPic = userPic;
+    }
+    
+    
 }

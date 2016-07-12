@@ -34,7 +34,8 @@ public class UsuarioServiceDefault implements UsuarioService {
         aux.setEmail(user.getEmail());
         aux.setPassword(user.getPassword());
         aux.setName(user.getName());
-
+        aux.setUserPic(user.getUserPic());
+        
         getUsuarioDao().saveOrUpdate(aux);
 
         return aux;

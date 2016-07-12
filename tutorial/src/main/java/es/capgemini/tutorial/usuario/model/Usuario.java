@@ -31,6 +31,9 @@ public class Usuario implements Serializable {
 
     @Column(name = "EMAIL")
     private String email;
+    
+    @Column(name = "USERPIC")
+    private String userPic;
 
     public Long getId() {
         return id;
@@ -71,5 +74,23 @@ public class Usuario implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    
+    /**
+     * @return the userPic
+     */
+    public String getUserPic() {
+        return userPic;
+    }
+
+    
+    /**
+     * @param userPic the userPic to set
+     */
+    public void setUserPic(String userPic) {
+        this.userPic = userPic;
+    }
+    
+    
 
 }
