@@ -29,8 +29,8 @@ Ext
                         return [
                                 {
                                     xtype : 'label',
-                                    html : '<span style="font-family:titleFont;color:red;font-size:80px;align:center;text-align: center;z-index:100;">Chirr!<span>',
-                                    width : 200,
+                                    html : '<img src="img/logo.png" ><span style="font-family:titleFont;color:red;font-size:80px;align:center;text-align: center;z-index:100;">Chirr!<span>',
+                                    width : 300,
                                     margin : '50 auto',
                                 }, {
                                     xtype : 'textfield',
