@@ -1,3 +1,38 @@
+CREATE TABLE USERS (
+   ID                            BIGINT(16)      NOT NULL PRIMARY KEY AUTO_INCREMENT,
+   USERNAME                      VARCHAR(10)    NOT NULL,
+   PASSWORD                      VARCHAR(50),
+   FIN_VIGENCIA_PASS             DATE,
+   NOMBRE                        VARCHAR(50),
+   APELLIDO1                     VARCHAR(50),
+   APELLIDO2                     VARCHAR(50),
+   EMAIL                         VARCHAR(50),
+   ENABLED                       CHAR(1)        NOT NULL DEFAULT 'Y',
+
+   CONSTRAINT AK_USERS_USERNAME UNIQUE (USERNAME),
+   CONSTRAINT AK_USERS_EMAIL UNIQUE (EMAIL)
+);
+
+CREATE TABLE AUTHORITY (
+  ID            BIGINT(16)       NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  USER_ID       BIGINT(16)       NOT NULL,
+  AUTHORITY     VARCHAR(50)     NOT NULL,
+  
+  CONSTRAINT FK_AUTHORITY_USUARIO FOREIGN KEY (USER_ID) REFERENCES USERS (ID)
+);
+
+/* Tabla USUARIO, passwords hasheados con sha1 iguales al nombre de usuario + id como salt*/
+
+INSERT INTO USERS (ID, USERNAME, PASSWORD, FIN_VIGENCIA_PASS, EMAIL, NOMBRE) VALUES (1, 'demo', sha1('demo{1}'), '2020-12-31', 'demo@domain.com', 'Demo user');
+INSERT INTO USERS (ID, USERNAME, PASSWORD, FIN_VIGENCIA_PASS, EMAIL, NOMBRE) VALUES (2, 'admin', sha1('admin{2}'), '2020-12-31', 'admin@domain.com', 'Administrator');
+
+/* Tabla AUTHORITY*/
+
+INSERT INTO AUTHORITY (USER_ID, AUTHORITY) VALUES ((SELECT id FROM users WHERE username = 'admin'), 'ROLE_ADMIN');
+/*Roles de devon para que los usuario puedan entrar a la aplicación*/
+INSERT INTO AUTHORITY (USER_ID, AUTHORITY) SELECT id, 'ROLE_USER' FROM USERS;
+
+
 /* Tabla Stream */
 CREATE TABLE STREAM (
    ID                    BIGINT(16)      NOT NULL PRIMARY KEY AUTO_INCREMENT,
