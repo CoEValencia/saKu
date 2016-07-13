@@ -3,6 +3,10 @@
     src: url('font/Blacksword.otf');
 }
 
+@font-face {
+    font-family: 'regularFont';
+    src: url('font/Roboto.ttf');
+}
 
 .app_login{
 	background-color: white;

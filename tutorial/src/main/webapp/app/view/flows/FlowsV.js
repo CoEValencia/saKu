@@ -35,7 +35,7 @@ Ext
                                 action : 'goBack'
                             },{
                                 xtype : 'label',
-                                html : '<span style="font-family:titleFont;color:white;font-size:22px;align:center;text-align: center;z-index:100;">'+this.ID_NAME+'<span>',
+                                html : '<span style="font-family:regularFont;color:white;font-size:22px;align:center;text-align: center;z-index:100;">'+this.ID_NAME+'<span>',
                                 width : 200,
                                 margin : '30 40 20 40 ',
                             }]

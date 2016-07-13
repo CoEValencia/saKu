@@ -35,7 +35,7 @@ Ext
                                 action : 'goBack'
                             },{
                                 xtype : 'label',
-                                html : '<span style="font-family:titleFont;color:white;font-size:22px;align:center;text-align: center;z-index:100;">'+this.ID_NAME+'<span>',
+                                html : '<span style="font-family:regularFont;color:white;font-size:22px;align:center;text-align: center;z-index:100;">'+this.ID_NAME+'<span>',
                                 width : 200,
                                 margin : '30 40 20 40 ',
                             }]
@@ -52,7 +52,7 @@ Ext
                             scrollToTopOnRefresh:false,
                             flex:1,
                             itemTpl: new Ext.XTemplate(
-                                    '{% var bStyle = values["user.id"] == Fwk.Security.userInfo.id ? "color: #58FA58 ; text-align:right; margin-top:20px !important;"  : "margin-top:20px !important;"; %}',                                   
+                                    '{% var bStyle = values["user.id"] == Fwk.Security.userInfo.id ? "font-family:regularFont; color:#58FA58; text-align:right; margin-top:20px !important;"  : "font-family:regularFont;margin-top:20px !important;"; %}',                                   
                                     '{% var name = values["user.id"] != Fwk.Security.userInfo.id ? values["user.name"] : ""; %}',
                                     '{% var urlPic = values["user.userPic"]; %}',
                                     '{% var classImage = values["user.id"] != Fwk.Security.userInfo.id? "image-chat" : ""; %}',
