@@ -54,10 +54,13 @@ Ext
                             itemTpl: new Ext.XTemplate(
                                     '{% var bStyle = values["user.id"] == Fwk.Security.userInfo.id ? "color: #58FA58 ; text-align:right; margin-top:20px !important;"  : "margin-top:20px !important;"; %}',                                   
                                     '{% var name = values["user.id"] != Fwk.Security.userInfo.id ? values["user.name"] : ""; %}',
+                                    '{% var urlPic = values["user.userPic"]; %}',
+                                    '{% var classImage = values["user.id"] != Fwk.Security.userInfo.id? "image-chat" : ""; %}',
                                     '<tpl>',
-                                    '<div class="message_name"><span>{[name]}</span></div>',
-                                    '<div style="font-size:12px; color:#A4A4A4; text-align: right;font-style: italic; float: right;"><span>{date:this.formatDate}</span></div>',
-                                    '<div style="{[bStyle]}">{message}</div>',
+                                    '<div class="{[classImage]}"; style="background-image:url(\'{[urlPic]}\')"><div style="background-image:url(\'{[urlPic]}\');"></div></div>',
+                                    '<span class="message_name">{[name]}</span>',
+                                    '<div style="font-size:12px; color:#A4A4A4; text-align: right; font-style: italic; float: right;"><span>{date:this.formatDate}</span></div>',
+                                    '<div style="{[bStyle]}"><span style="margin-left:10px;">{message}</span></div>',                                 
                                     '</tpl>', {
                                         formatDate: function(value) {
                                             if (Ext.Date.format(value,'d/m/Y') != Ext.Date.format(new Date(),'d/m/Y'))

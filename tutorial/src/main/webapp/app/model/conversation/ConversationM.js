@@ -18,6 +18,9 @@ Ext.define('App.model.conversation.ConversationM',{
                    name:'user.name',
                    type:'string'
                },{
+                   name:'user.userPic',
+                   type:'string'
+               },{
                    name: 'date',
                    type: 'date',
                    dateFormat: 'c'

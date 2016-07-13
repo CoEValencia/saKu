@@ -36,10 +36,10 @@ Ext.define("App.controller.registry.RegistryC", {
 
     doNewUser: function(btn){    
         if (typeof globalImageTapped=="string"){
-            var userPic=globalImageTapped;
+            var userPic='img/'+globalImageTapped.split("_")[0]+'-icon.png';
         }
         else {
-            var userPic=null;
+            var userPic='img/default-icon.png';
         }
         
         var name = Ext.ComponentQuery.query("#nameFieldreg")[0].getValue();
