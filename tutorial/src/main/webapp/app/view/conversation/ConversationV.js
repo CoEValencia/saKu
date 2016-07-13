@@ -60,14 +60,18 @@ Ext
                                     '<div class="{[classImage]}"; style="background-image:url(\'{[urlPic]}\')"><div style="background-image:url(\'{[urlPic]}\');"></div></div>',
                                     '<span class="message_name">{[name]}</span>',
                                     '<div style="font-size:12px; color:#A4A4A4; text-align: right; font-style: italic; float: right;"><span>{date:this.formatDate}</span></div>',
-                                    '<div style="{[bStyle]}"><span style="margin-left:10px;">{message}</span></div>',                                 
+                                    '<div style="{[bStyle]}"><span style="margin-left:10px;">{message:this.linkText}</span></div>',                                 
                                     '</tpl>', {
                                         formatDate: function(value) {
                                             if (Ext.Date.format(value,'d/m/Y') != Ext.Date.format(new Date(),'d/m/Y'))
                                                 return  'El ' + Ext.Date.format(value,'d/m/Y') + ' a las ' + Ext.Date.format(value,'H:i');
                                             else return 'Hoy a las ' + Ext.Date.format(value,'H:i');
-                                }
-                            }
+                                        },
+                                        linkText: function (value) {
+                                            var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/i;
+                                            return value.replace(exp,"<a href='$1'>$1</a>"); 
+                                        }
+                                    }
                                     
                             )
                         },
