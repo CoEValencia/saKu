@@ -26,11 +26,12 @@ CREATE TABLE AUTHORITY (
 
 INSERT INTO USERS (ID, USERNAME, PASSWORD, FIN_VIGENCIA_PASS, EMAIL, NOMBRE, USERPIC) VALUES (1, 'demo', sha1('demo{1}'), '2020-12-31', 'demo@domain.com', 'Demo user', 'img/cat-icon.png');
 INSERT INTO USERS (ID, USERNAME, PASSWORD, FIN_VIGENCIA_PASS, EMAIL, NOMBRE, USERPIC) VALUES (2, 'admin', sha1('admin{2}'), '2020-12-31', 'admin@domain.com', 'Administrator', 'img/default-icon.png');
-/*INSERT INTO USERS (ID, USERNAME, PASSWORD, FIN_VIGENCIA_PASS, EMAIL, NOMBRE, USERPIC) VALUES (3, 'saku', sha1('saku{3}'), '2020-12-31', 'saku@domain.com', 'Saku', 'img/penguin-icon.png');*/
+INSERT INTO USERS (ID, USERNAME, PASSWORD, FIN_VIGENCIA_PASS, EMAIL, NOMBRE, USERPIC) VALUES (3, 'user0', sha1('user0{3}'), '2020-12-31', 'user0@domain.com', 'User0', 'img/penguin-icon.png');
 
 /* Tabla AUTHORITY*/
 
 INSERT INTO AUTHORITY (USER_ID, AUTHORITY) VALUES ((SELECT id FROM users WHERE username = 'admin'), 'ROLE_ADMIN');
+INSERT INTO AUTHORITY (USER_ID, AUTHORITY) VALUES ((SELECT id FROM users WHERE username = 'user0'), 'ROLE_ADMIN');
 /*Roles de devon para que los usuario puedan entrar a la aplicación*/
 INSERT INTO AUTHORITY (USER_ID, AUTHORITY) SELECT id, 'ROLE_USER' FROM USERS;
 
@@ -72,6 +73,8 @@ INSERT INTO FLOW (Name,STREAM_ID) VALUES ('Ocio',1);
 /* DEFAULT MESSAGES*/
 INSERT INTO MESSAGE (MESSAGE,FLOW_ID,USER_ID) VALUES ('Hola, ¿Que tal?',1,1);
 INSERT INTO MESSAGE (MESSAGE,FLOW_ID,USER_ID) VALUES ('¿Que se cuenta la gente?',1,1);
+INSERT INTO MESSAGE (MESSAGE,FLOW_ID,USER_ID) VALUES ('Hola',1,3);
+INSERT INTO MESSAGE (MESSAGE,FLOW_ID,USER_ID) VALUES ('¡Cuánto tiempo sin verte!',1,3);
 
 
 /* Tabla Favoritos. Cada usuario puede tener unos chats favoritos*/
