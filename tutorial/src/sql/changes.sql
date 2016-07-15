@@ -7,8 +7,8 @@ CREATE TABLE USERS (
    APELLIDO1                     VARCHAR(50),
    APELLIDO2                     VARCHAR(50),
    EMAIL                         VARCHAR(50),
-   ENABLED                       CHAR(1)        NOT NULL DEFAULT 'Y',
-   USERPIC 						 CHAR(50)
+   ENABLED                       CHAR(1)       NOT NULL DEFAULT 'Y',
+   USERPIC 						 CHAR(50),
 
    CONSTRAINT AK_USERS_USERNAME UNIQUE (USERNAME),
    CONSTRAINT AK_USERS_EMAIL UNIQUE (EMAIL)
