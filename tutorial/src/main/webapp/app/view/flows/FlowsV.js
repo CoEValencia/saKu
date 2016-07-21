@@ -26,7 +26,7 @@ Ext
                             layout: {
                                 type: 'hbox',
                             },
-                            style: 'background-color:#FA5858',
+                            style: 'background-color:#FF3E52',
                             items:[{
                                 xtype : 'button',
                                 iconCls:'arrow_left',
@@ -61,7 +61,7 @@ Ext
                                 type: 'hbox',
                                 pack : 'end'
                             },
-                            style: 'background-color:#FA5858',
+                            style: 'background-color:#FF3E52',
                             items:[{
                                 xtype : 'button',
                                 iconCls:'add',

@@ -26,11 +26,11 @@ Ext
                             layout: {
                                 type: 'hbox',
                             },
-                            style: 'background-color:#FA5858',
+                            style: 'background-color:#FF3E52',
                             items:[{
                                 xtype : 'button',
                                 iconCls:'arrow_left',
-                                cls : 'chirr-button-gray',
+                                cls : 'chirr-button',
                                 margin : '20 40 20 40 ',
                                 action : 'goBack'
                             },{
@@ -52,7 +52,7 @@ Ext
                             scrollToTopOnRefresh:false,
                             flex:1,
                             itemTpl: new Ext.XTemplate(
-                                    '{% var bStyle = values["user.id"] == Fwk.Security.userInfo.id ? "font-family:regularFont; color:#58FA58; text-align:right; margin-top:20px !important;"  : "font-family:regularFont;margin-top:20px !important;"; %}',                                   
+                                    '{% var bStyle = values["user.id"] == Fwk.Security.userInfo.id ? "font-family:regularFont; color:#000; text-align:right; margin-top:20px !important;"  : "font-family:regularFont;margin-top:20px !important;"; %}',                                   
                                     '{% var name = values["user.id"] != Fwk.Security.userInfo.id ? values["user.name"] : ""; %}',
                                     '{% var urlPic = values["user.userPic"]; %}',
                                     '{% var classImage = values["user.id"] != Fwk.Security.userInfo.id? "image-chat" : ""; %}',
@@ -92,7 +92,7 @@ Ext
                             },{
                                 xtype : 'button',
                                 iconCls:'arrow_right',
-                                cls : 'chirr-button-gray',
+                                cls : 'chirr-button',
                                 margin : '20 40 20 40 ',
                                 action : 'sendMessage'
                             }]

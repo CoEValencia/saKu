@@ -1,7 +1,9 @@
 @font-face {
-    font-family: 'titleFont';
+    font-family: 'titleFont';    
     src: url('font/Blacksword.otf');
 }
+
+
 
 @font-face {
     font-family: 'regularFont';
@@ -23,12 +25,17 @@
    background-image: none !important;
 }
 
+.x-toolbar-dark.x-docked-top {
+    border-bottom-color: transparent;
+}
+
 .x-panel-body{
     background-color : white !important;
      background-image: none !important;
 }
-
-
+#ext-element-77 > span, #ext-element-11 > span{
+	color: #FF3E52 !important;
+}
 
 .x-msgbox {
     margin: .5em;
@@ -50,13 +57,19 @@
     text-shadow: rgba(0,0,0,0.5) 0 -0.08em 0;
 }
 
-#ext-button-5, #ext-button-7{
+.x-msgbox #ext-button-5{
 	background-color: #FF3E52;
 	border: 0px solid #FF3E52;
 }
 
 div#ext-toolbar-2{
 	background: white !important;
+}
+
+.x-list .x-list-item.x-item-selected .x-dock-horizontal, .x-list .x-list-item.x-item-selected.x-list-item-tpl {
+    background-image: none !important;
+    background-color: #FF3E52;
+    color: #fff;
 }
 
 .chirr-field {
@@ -74,7 +87,7 @@ div#ext-toolbar-2{
 
 .chirr-button {
 	background-color: #FF3E52;
-	border-color: red;
+	border-color: #FF3E52;
 	color:white;
 	border-radius: 0px;
 }
@@ -82,7 +95,14 @@ div#ext-toolbar-2{
 .chirr-button-gray {
 	background-color: white;
 	border-color: #FF3E52;
-	color:red;
+	color:#FF3E52;
+	border-radius: 0px;
+}
+
+.chirr-button-inverted {
+	background-color: #FF3E52;
+	border-color: #FF3E52;
+	color:white;
 	border-radius: 0px;
 }
 
@@ -108,7 +128,7 @@ div#ext-toolbar-2{
 
 
 .panel_chirr{
-	background-color: #red;
+	background-color: #FF3E52;
 }
 
 .image-chat{
@@ -146,7 +166,7 @@ div#ext-toolbar-2{
 	background-size:100px 100px;
     border: 5px solid;
 	border-style: solid;
-	border-color: red;
+	border-color: #FF3E52;
 }
 
 .selectfield {
