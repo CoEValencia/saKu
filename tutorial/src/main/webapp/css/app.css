@@ -99,12 +99,22 @@ div#ext-toolbar-2{
 	border-radius: 0px;
 }
 
-.chirr-button-inverted {
-	background-color: #FF3E52;
-	border-color: #FF3E52;
-	color:white;
-	border-radius: 0px;
+.x-list-normal .x-list-header{
+    background-image: none !important;
+    background-color: #FF3E52;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
 }
+
+.x-toolbar-light {
+    background-image: none !important;
+    background-color: #FF3E52;
+}
+
+.x-toolbar-light.x-docked-top {
+    border-bottom-color: white;
+}
+
 
 .message_name {
 	margin-left:10px;
