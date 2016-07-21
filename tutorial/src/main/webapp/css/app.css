@@ -56,10 +56,10 @@
     color: #000;
     text-shadow: rgba(0,0,0,0.5) 0 -0.08em 0;
 }
-
-.x-msgbox #ext-button-5{
-	background-color: #FF3E52;
-	border: 0px solid #FF3E52;
+/*#ext-button-5*/
+.x-msgbox .x-button{
+	background-color: #FF3E52 !important;
+	border: 0px solid #FF3E52 !important;
 }
 
 div#ext-toolbar-2{
@@ -70,6 +70,12 @@ div#ext-toolbar-2{
     background-image: none !important;
     background-color: #FF3E52;
     color: #fff;
+}
+
+.x-toolbar-dark .x-button, .x-toolbar .x-toolbar-dark .x-button, .x-toolbar-dark .x-field-select .x-component-outer, .x-toolbar .x-toolbar-dark .x-field-select .x-component-outer, .x-toolbar-dark .x-field-select .x-component-outer:before, .x-toolbar .x-toolbar-dark .x-field-select .x-component-outer:before {
+    border: 1px solid transparent;
+    border-top-color: transparent;
+    background-color: transparent;
 }
 
 .chirr-field {
@@ -105,6 +111,8 @@ div#ext-toolbar-2{
     border-top: 1px solid white;
     border-bottom: 1px solid white;
 }
+
+
 
 .x-toolbar-light {
     background-image: none !important;

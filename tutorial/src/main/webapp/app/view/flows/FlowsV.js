@@ -30,7 +30,7 @@ Ext
                             items:[{
                                 xtype : 'button',
                                 iconCls:'arrow_left',
-                                cls : 'chirr-button-gray',
+                                cls : 'chirr-button',
                                 margin : '20 40 20 40 ',
                                 action : 'goBack'
                             },{

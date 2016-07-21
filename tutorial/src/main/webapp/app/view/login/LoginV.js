@@ -52,7 +52,7 @@ Ext
                                     placeHolder : 'Contraseña'
                                 }, {
                                     xtype : 'button',
-                                    text : 'Enviar',
+                                    text : 'Entrar',
                                     cls : 'chirr-button',
 //                                    maxWidth : 200,
 //                                    margin : '20 auto',
