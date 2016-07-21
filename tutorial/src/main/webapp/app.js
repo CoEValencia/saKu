@@ -46,7 +46,7 @@ Fwk.application({
     ],
 
     launch: function() {
-		this.title=i18n.appName;
-        document.title = Fwk.config.title = i18n.appName;
+		this.title='Chirr';
+        document.title = Fwk.config.title = 'Chirr';
     }
 });
