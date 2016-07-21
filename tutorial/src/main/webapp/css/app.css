@@ -29,6 +29,36 @@
 }
 
 
+
+.x-msgbox {
+    margin: .5em;
+    border: 0.15em solid #FF3E52;
+    -webkit-box-shadow: rgba(0,0,0,0.4) 0 0.1em 0.5em;
+    -moz-box-shadow: rgba(0,0,0,0.4) 0 0.1em 0.5em;
+    box-shadow: rgba(0,0,0,0.4) 0 0.1em 0.5em;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -ms-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+    border-radius: 0.3em;
+    background-image: none !important;
+    background-color: white;
+}
+
+.x-msgbox-dark .x-msgbox-text {
+    color: #000;
+    text-shadow: rgba(0,0,0,0.5) 0 -0.08em 0;
+}
+
+#ext-button-5, #ext-button-7{
+	background-color: #FF3E52;
+	border: 0px solid #FF3E52;
+}
+
+div#ext-toolbar-2{
+	background: white !important;
+}
+
 .chirr-field {
 	border: 1px solid !important;
 	border-style: solid;
@@ -151,6 +181,11 @@ display: block;
         font-size: 25px;
     }
 }
+
+
+
+
+
 }  
    
 }
