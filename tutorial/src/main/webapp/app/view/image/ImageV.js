@@ -7,7 +7,7 @@ Ext
 
                     config : {
                         baseCls : 'app_login',
-                        scrollable : false,
+                        scrollable : true,
                         fullscreen : true
                     },
 
