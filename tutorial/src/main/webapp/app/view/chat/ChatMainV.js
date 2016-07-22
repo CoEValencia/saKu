@@ -26,7 +26,7 @@ Ext.define('App.view.chat.ChatMainV', {
             mask: true,
             success: function(response, opts) {
                if(response.length == 0){
-                   Fwk.Msg.error("Por favor, confirme su cuenta. Revise su correo", function(){Fwk.Security.logout();});
+                   Ext.Msg.alert('Aviso', "Por favor, confirme su cuenta. Revise su correo", function(){Fwk.Security.logout();});
                }else{
                    me.setItems([
                                   {

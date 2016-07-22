@@ -60,7 +60,7 @@ Ext.define("App.controller.registry.RegistryC", {
                   userPic:userPic
                 },
                 success: function(response){
-                    Fwk.Msg.error(response.responseText, function(){location.reload();});
+                    Ext.Msg.alert('Aviso', response.responseText, function(){location.reload();});
                     Ext.Viewport.unmask();
                     //globalImageTapped=null;
                 }, 

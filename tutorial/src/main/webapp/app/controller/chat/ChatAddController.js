@@ -25,7 +25,7 @@ Ext.define("App.controller.chat.ChatAddController", {
             params:{'name':name},
             mask: true,
             success: function(response, opts) {
-                Fwk.Msg.error(response.name + " Creado correctamente", function(){
+                Ext.Msg.alert('Aviso', response.name + " creado correctamente", function(){
                     Ext.Viewport.remove(Ext.Viewport.getActiveItem());
                 });
             }
