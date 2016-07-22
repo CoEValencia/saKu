@@ -12,9 +12,9 @@ Yahve Perez Abadia
 #### Documentacion
 
 Clonar el proyecto 
-```
+´´´
 git clone https://github.com/CoEValencia/saKu.git
-```
+´´´
 
 #### Crear la base de datos
 > Utilizar el MySQL del entorno Devon. Crear esquema MySQL y un usuario con derechos sobre el esquema:
