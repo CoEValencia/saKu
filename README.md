@@ -9,6 +9,8 @@ Cynthia España Sanjuan - sakura.sq@gmail.com
 Jesús Juan Aguilar - jesusjuanaguilar@gmail.com
 Yahve Perez Abadia
 
+El registro no funciona en la red de capgemini.
+
 #### Documentacion
 
 Clonar el proyecto 
