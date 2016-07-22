@@ -49,3 +49,12 @@ source workspace\saKu\tutorial\src\sql\changes.sql;
 ´´´
 
 
+##### Hitos conseguidos:
+
+ -- login / register
+ -- text chat - multiple streams (minimally: public / without flows)
+ -- multiple flows per stream
+ -- stream / flow / content search
+ -- real time update over web socket
+ -- hyper links embedded content
+
