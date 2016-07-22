@@ -32,7 +32,7 @@ Ext.define('App.view.chat.ChatMainV', {
                                   {
                                       xtype : 'label',
                                       html : '<span style="font-family:titleFont;color:red;font-size:22px;align:center;text-align: center;z-index:100;">Chirr!<span>',
-                                      width : 200,
+                                      width : 150,
                                       margin : '20 auto',
                                   },{
                                       xtype:'panel',

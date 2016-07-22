@@ -32,7 +32,7 @@ Ext
                             },{
                                 xtype : 'label',
                                 html : '<span style="font-style: italic;color:red;font-size:15px;align:center;text-align: center;z-index:100;">Selecciona una imagen:<span>',
-                                width : 200,
+                                width : 150,
                                 margin : '30 40 20 40 ',
                             }]
                         },{
