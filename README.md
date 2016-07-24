@@ -11,6 +11,14 @@ Yahve Perez Abadia
 
 El registro no funciona en la red de capgemini.
 
+Usuarios preconfigurados de la aplicacion:
+| User       | Pass          | 
+| ------------- |:-------------:| 
+| admin     | admin | 
+| demo     | demo     |  
+| user0 |  user0     |  
+
+
 #### Documentacion
 
 Clonar el proyecto 
