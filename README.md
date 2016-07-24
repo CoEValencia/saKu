@@ -4,10 +4,14 @@
 
 ![alt tag](https://github.com/CoEValencia/saKu/blob/master/tutorial/src/main/webapp/img/muestra.jpg)
 
-Alba Baron Rubio - albabaronrubio@gmail.com
-Cynthia España Sanjuan - sakura.sq@gmail.com
-Jesús Juan Aguilar - jesusjuanaguilar@gmail.com
-Yahve Perez Abadia
+Miembros del equipo saKu:
+
+| Nombre       | Correo          | 
+| ------------- |:-------------:| 
+| Alba Baron Rubio      | albabaronrubio@gmail.com | 
+| Cynthia España Sanjuan     | sakura.sq@gmail.com     |  
+| Jesús Juan Aguilar |  jesusjuanaguilar@gmail.com     | 
+| Yahve Perez Abadia |       |
 
 El registro no funciona en la red de capgemini.
 
