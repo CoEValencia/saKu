@@ -32,7 +32,7 @@ Ext.define("App.controller.conversation.ConversationController", {
                   params:{'id':cmp.ID_FLOW, 'superior':last},
                   mask: false,
                   success: function(response, opts) {
-                      if(response.length > 0){
+                      if(response.length > Ext.ComponentQuery.query("#messageList")[0].getStore().data.length){
                           Ext.ComponentQuery.query("#messageList")[0].getStore().addData(response);
                           setTimeout(function(){
                               Ext.ComponentQuery.query("#messageList")[0].getScrollable().getScroller().scrollToEnd(true);
